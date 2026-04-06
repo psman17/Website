@@ -587,16 +587,20 @@ const CTA = () => {
           İşletmenizin veri potansiyelini değerlendirmek ve size özel çözümlerimizi konuşmak için ücretsiz danışmanlık randevusu alın.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
-            <a href="https://wa.me/905437431754" target="_blank">
+          <a 
+            href="https://wa.me/905437431754" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex justify-center items-center bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+          >
             Ücretsiz Danışmanlık Alın
-            </a>
-          </button>
-          <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all">
-           <a href="mailto:mustafa.oz@bianalytic.net">
+          </a>
+          <a 
+            href="mailto:mustafa.oz@bianalytic.net"
+            className="inline-flex justify-center items-center bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all"
+          >
             Bize Ulaşın
-           </a>
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -640,8 +644,20 @@ const Footer = () => {
         <div className="pt-8 border-t border-navy-800 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Bi Analytic. Tüm hakları saklıdır.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
-            <a href="#" className="hover:text-white transition-colors">Kullanım Şartları</a>
+            <div className="relative group">
+              <a href="#" className="hover:text-white transition-colors cursor-help">Gizlilik Politikası</a>
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-800 text-xs text-white text-center rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none z-10 shadow-lg">
+                Verilerinizin nasıl korunduğunu ve işlendiğini öğrenin.
+                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
+              </div>
+            </div>
+            <div className="relative group">
+              <a href="#" className="hover:text-white transition-colors cursor-help">Kullanım Şartları</a>
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-800 text-xs text-white text-center rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none z-10 shadow-lg">
+                Hizmetlerimizi kullanım koşullarını ve yasal haklarınızı inceleyin.
+                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
