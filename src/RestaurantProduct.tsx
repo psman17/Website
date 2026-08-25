@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, BarChart3, Check, ChefHat, ClipboardList, ExternalLink, Menu, MonitorPlay, Package, Printer, QrCode, ShieldCheck, X } from 'lucide-react';
 
-const APP_URL = import.meta.env.VITE_RESTAURANT_APP_URL || 'https://mudavim-pos-staging.web.app';
-const DEMO_MENU_URL = `${APP_URL}/menu/bi-restoran-demo/location_bi_restoran_demo_main`;
+const APP_URL = 'https://pos.bianalytic.tr';
 const INTERACTIVE_DEMO_URL = `${APP_URL}/demo`;
+const DEMO_MENU_URL = 'https://mudavim-pos-staging.web.app/menu/bi-restoran-demo/location_bi_restoran_demo_main';
 const CONTACT_EMAIL = 'saasadmin@bianalytic.net';
 
 const features = [
