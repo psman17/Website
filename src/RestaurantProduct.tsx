@@ -4,7 +4,7 @@ import { ArrowRight, BarChart3, Check, ChefHat, ClipboardList, ExternalLink, Men
 
 const APP_URL = 'https://pos.bianalytic.tr';
 const INTERACTIVE_DEMO_URL = `${APP_URL}/demo`;
-const DEMO_MENU_URL = 'https://mudavim-pos-staging.web.app/menu/bi-restoran-demo/location_bi_restoran_demo_main';
+const DEMO_MENU_URL = `${APP_URL}/demo/menu`;
 const CONTACT_EMAIL = 'saasadmin@bianalytic.net';
 
 const features = [
