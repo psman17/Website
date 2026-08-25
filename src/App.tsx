@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import RestaurantProduct from './RestaurantProduct';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -70,6 +71,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: 'Bi Restoran', href: '/restoran' },
     { name: 'Şablonlar', href: '#templates' },
     { name: 'Neden Biz?', href: '#services' },
     { name: 'Referanslar', href: '#cases' },
@@ -735,6 +737,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/restoran' || window.location.pathname.startsWith('/restoran/')) {
+    return <RestaurantProduct />;
+  }
+
   return (
     <div className="min-h-screen bg-light-bg font-sans selection:bg-teal-500/30">
       <Navbar />
