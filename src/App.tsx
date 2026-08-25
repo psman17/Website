@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RestaurantProduct from './RestaurantProduct';
+import RestaurantDemo from './RestaurantDemo';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -737,6 +738,9 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/restoran/demo') {
+    return <RestaurantDemo />;
+  }
   if (window.location.pathname === '/restoran' || window.location.pathname.startsWith('/restoran/')) {
     return <RestaurantProduct />;
   }
