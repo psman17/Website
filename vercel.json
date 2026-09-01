@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/((?!assets/|favicon.ico|Logo.png).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|favicon.ico|Logo.png|bi-suru-logo.svg).*)", "destination": "/index.html" }
   ]
 }

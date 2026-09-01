@@ -41,7 +41,7 @@ const flow = [
 
 function ProductMark({ compact = false }: { compact?: boolean }) {
   return <span className="flex shrink-0 items-center gap-3">
-    <span className={`${compact ? 'h-12 w-12 rounded-xl' : 'h-14 w-14 rounded-2xl'} grid place-items-center bg-emerald-700 text-white shadow-sm`}><Beef size={compact ? 26 : 30}/></span>
+    <img src="/bi-suru-logo.svg" alt="Bi Sürü" className={`${compact ? 'h-12 w-12 rounded-xl' : 'h-14 w-14 rounded-2xl'} object-cover shadow-sm`}/>
     <span><strong className="block font-display text-xl leading-none text-navy-900">Bi Sürü</strong><small className="mt-1 block text-[10px] font-bold uppercase tracking-[.2em] text-emerald-700">Herd Intelligence</small></span>
   </span>;
 }
@@ -74,6 +74,10 @@ export default function HerdProduct() {
     const el = document.querySelector('meta[name="description"]') || document.head.appendChild(document.createElement('meta'));
     el.setAttribute('name', 'description');
     el.setAttribute('content', 'Sürü, biyolojik takvim, süt, üreme, sağlık, yem, finans ve analitiği tek platformda birleştiren bulut tabanlı çiftlik yönetim sistemi.');
+    const favicon = document.querySelector<HTMLLinkElement>('link[rel="icon"]') || document.head.appendChild(document.createElement('link'));
+    favicon.rel = 'icon';
+    favicon.type = 'image/svg+xml';
+    favicon.href = '/bi-suru-logo.svg';
   }, []);
 
   return <div className="min-h-screen bg-[#fbfdf8] font-sans text-navy-900"><ProductNav/><main><ProductHero/>
