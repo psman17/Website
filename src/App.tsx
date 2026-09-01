@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RestaurantProduct from './RestaurantProduct';
+import HerdProduct from './HerdProduct';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -72,6 +73,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Bi Restoran', href: '/restoran' },
+    { name: 'Bi Sürü', href: '/suru' },
     { name: 'Şablonlar', href: '#templates' },
     { name: 'Neden Biz?', href: '#services' },
     { name: 'Referanslar', href: '#cases' },
@@ -739,6 +741,10 @@ const Footer = () => {
 export default function App() {
   if (window.location.pathname === '/restoran' || window.location.pathname.startsWith('/restoran/')) {
     return <RestaurantProduct />;
+  }
+
+  if (window.location.pathname === '/suru' || window.location.pathname.startsWith('/suru/')) {
+    return <HerdProduct />;
   }
 
   return (
