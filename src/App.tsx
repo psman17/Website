@@ -7,6 +7,7 @@ import PrivacyPolicyPage from './PrivacyPolicyPage';
 import ContactPage from './ContactPage';
 import TermsOfUsePage from './TermsOfUsePage';
 import ConsultingComparisonPage from './ConsultingComparisonPage';
+import FastAnalyticsGuidePage from './FastAnalyticsGuidePage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -816,6 +817,7 @@ const Footer = () => {
               <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
               <li><a href="/iletisim" className="hover:text-teal-400 transition-colors">İletişim</a></li>
               <li><a href="/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu" className="hover:text-teal-400 transition-colors">Danışmanlık mı, BI Platformu mu?</a></li>
+              <li><a href="/rehber/kobiler-icin-hizli-veri-analizi" className="hover:text-teal-400 transition-colors">KOBİ Veri Analizi Rehberi</a></li>
             </ul>
           </div>
         </div>
@@ -845,6 +847,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/rehber/kobiler-icin-hizli-veri-analizi' || window.location.pathname.startsWith('/rehber/kobiler-icin-hizli-veri-analizi/')) {
+    return <FastAnalyticsGuidePage />;
+  }
+
   if (window.location.pathname === '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu' || window.location.pathname.startsWith('/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/')) {
     return <ConsultingComparisonPage />;
   }

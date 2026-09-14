@@ -96,6 +96,33 @@ const routes = [
     },
   },
   {
+    pathname: '/rehber/kobiler-icin-hizli-veri-analizi',
+    output: path.join('rehber', 'kobiler-icin-hizli-veri-analizi', 'index.html'),
+    title: 'KOBİ’ler İçin Hızlı ve Ekonomik Veri Analizi',
+    description: 'KOBİ’lerde veri kaynaklarını birleştirip küçük kapsamlı bir model ve dashboard ile hızlı, ölçülebilir ve ekonomik analize nasıl başlanacağını öğrenin.',
+    canonical: 'https://www.bianalytic.net/rehber/kobiler-icin-hizli-veri-analizi',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'Article',
+        headline: 'KOBİ’ler İçin Hızlı ve Ekonomik Veri Analizi',
+        description: 'Türkiye’deki KOBİ’ler için veri keşfi, entegrasyon, modelleme ve dashboard başlangıç rehberi.',
+        url: 'https://www.bianalytic.net/rehber/kobiler-icin-hizli-veri-analizi',
+        author: {'@id': organization['@id']},
+        publisher: {'@id': organization['@id']},
+        inLanguage: 'tr',
+      }, {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {'@type': 'Question', name: 'İlk dashboard 48 saatte hazır olur mu?', acceptedAnswer: {'@type': 'Answer', text: 'Veriler doğru yapılandırılmışsa ilk 48 saatte entegrasyon, veri modeli ve dashboard tasarımı başlatılabilir. Bütün projenin teslim süresi kapsam ve veri kalitesine göre belirlenir.'}},
+          {'@type': 'Question', name: 'Veri keşfi ücretli midir?', acceptedAnswer: {'@type': 'Answer', text: 'Hayır. Bianalytic veri keşfini ücretsiz yapar. İhtiyaç, kaynaklar ve uygulanabilir kapsam belirlendikten sonra teklif hazırlanır.'}},
+          {'@type': 'Question', name: 'Mevcut BI lisansı kullanılabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Mevcut lisans ve teknik altyapı veri keşfinde değerlendirilir. Uygunsa yeni bir araç satın almadan mevcut teknolojiyle devam edilebilir.'}},
+          {'@type': 'Question', name: 'BT ekibi olmadan başlanabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Veri kaynaklarına gerekli erişim sağlandığında entegrasyon, model ve dashboard süreci Bianalytic ile birlikte yürütülebilir.'}},
+        ],
+      }],
+    },
+  },
+  {
     pathname: '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
     output: path.join('karsilastirma', 'is-zekasi-danismanligi-ve-bi-platformu', 'index.html'),
     title: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
