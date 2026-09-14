@@ -50,6 +50,7 @@ export default function PrivacyPolicyPage() {
         <section className="mt-10 rounded-3xl bg-navy-900 p-7 text-slate-200">
           <h2 className="font-display text-2xl font-bold text-white">İletişim</h2>
           <p className="mt-3">Gizlilik ve kişisel veri talepleri için: <a className="font-bold text-teal-300 underline" href="mailto:info@bianalytic.net">info@bianalytic.net</a></p>
+          <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold"><a className="text-teal-300 underline" href="/iletisim">İletişim</a><a className="text-teal-300 underline" href="/kullanim-kosullari">Kullanım Koşulları</a></div>
         </section>
       </main>
     </div>

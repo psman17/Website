@@ -22,6 +22,8 @@
     }
   ],
   "rewrites": [
+    { "source": "/iletisim", "destination": "/iletisim/index.html" },
+    { "source": "/kullanim-kosullari", "destination": "/kullanim-kosullari/index.html" },
     { "source": "/gizlilik-politikasi", "destination": "/gizlilik-politikasi/index.html" },
     { "source": "/is-zekasi-danismanligi", "destination": "/is-zekasi-danismanligi/index.html" },
     { "source": "/ozel-yapay-zeka", "destination": "/ozel-yapay-zeka/index.html" },
