@@ -9,6 +9,7 @@ import TermsOfUsePage from './TermsOfUsePage';
 import ConsultingComparisonPage from './ConsultingComparisonPage';
 import FastAnalyticsGuidePage from './FastAnalyticsGuidePage';
 import ReadyDashboardGuidePage from './ReadyDashboardGuidePage';
+import SalesRevenueGuidePage from './SalesRevenueGuidePage';
 import AboutPage from './AboutPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -821,6 +822,7 @@ const Footer = () => {
               <li><a href="/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu" className="hover:text-teal-400 transition-colors">Danışmanlık mı, BI Platformu mu?</a></li>
               <li><a href="/rehber/kobiler-icin-hizli-veri-analizi" className="hover:text-teal-400 transition-colors">KOBİ Veri Analizi Rehberi</a></li>
               <li><a href="/rehber/kobiler-icin-hazir-paneller" className="hover:text-teal-400 transition-colors">KOBİ Hazır Panel Rehberi</a></li>
+              <li><a href="/rehber/satis-ve-gelir-takibi" className="hover:text-teal-400 transition-colors">Satış ve Gelir Takibi Rehberi</a></li>
             </ul>
           </div>
         </div>
@@ -860,6 +862,10 @@ export default function App() {
 
   if (window.location.pathname === '/rehber/kobiler-icin-hazir-paneller' || window.location.pathname.startsWith('/rehber/kobiler-icin-hazir-paneller/')) {
     return <ReadyDashboardGuidePage />;
+  }
+
+  if (window.location.pathname === '/rehber/satis-ve-gelir-takibi' || window.location.pathname.startsWith('/rehber/satis-ve-gelir-takibi/')) {
+    return <SalesRevenueGuidePage />;
   }
 
   if (window.location.pathname === '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu' || window.location.pathname.startsWith('/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/')) {

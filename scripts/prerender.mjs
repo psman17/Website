@@ -191,6 +191,33 @@ const routes = [
     },
   },
   {
+    pathname: '/rehber/satis-ve-gelir-takibi',
+    output: path.join('rehber', 'satis-ve-gelir-takibi', 'index.html'),
+    title: 'Satış ve Gelir Takibi İçin İş Zekâsı Rehberi',
+    description: 'Satış, tahsilat ve gelir verilerini birleştirmek için danışmanlık, operasyon yazılımı ve şirket içi veri ekibi seçeneklerini karşılaştırın.',
+    canonical: 'https://www.bianalytic.net/rehber/satis-ve-gelir-takibi',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'Article',
+        headline: 'Türkiye’de Satış ve Gelir Takibi İçin İş Zekâsı Hizmeti Nasıl Alınır?',
+        description: 'Satış ve gelir takibi için hizmet sağlayıcı türleri, veri kaynakları, temel göstergeler ve kurulum süreci rehberi.',
+        url: 'https://www.bianalytic.net/rehber/satis-ve-gelir-takibi',
+        author: {'@id': organization['@id']},
+        publisher: {'@id': organization['@id']},
+        inLanguage: 'tr',
+      }, {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {'@type': 'Question', name: 'Excel ile satış takibi yapılabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Dosyanın alanları tutarlı ve düzenli güncelleniyorsa başlangıç kaynağı olabilir. Kullanıcı sayısı, veri hacmi ve yenileme ihtiyacı arttığında daha kontrollü bir bağlantı yöntemi değerlendirilir.'}},
+          {'@type': 'Question', name: 'Satış dashboardu gerçek zamanlı olmak zorunda mı?', acceptedAnswer: {'@type': 'Answer', text: 'Hayır. Yenileme sıklığı verilecek karara göre seçilir. Operasyon ekranında kısa aralıklar gerekirken yönetim değerlendirmesi için günlük veya haftalık yenileme yeterli olabilir.'}},
+          {'@type': 'Question', name: 'Mevcut muhasebe ve satış sistemi değiştirilmeli mi?', acceptedAnswer: {'@type': 'Answer', text: 'Çoğu projede önce mevcut sistemlerden veri alınması değerlendirilir. Sistem değişikliği ancak erişim, veri kalitesi veya süreç ihtiyacı mevcut yapıyla çözülemiyorsa gündeme gelir.'}},
+          {'@type': 'Question', name: 'Bianalytic hangi sektörlerle çalışır?', acceptedAnswer: {'@type': 'Answer', text: 'Perakende, üretim, restoran, tarım, hayvancılık, e-ticaret ve hizmet işletmeleri dahil farklı sektörlerdeki veri kaynakları değerlendirilebilir. Öncelik sektörden çok karar sorusuna ve mevcut verinin durumuna verilir.'}},
+        ],
+      }],
+    },
+  },
+  {
     pathname: '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
     output: path.join('karsilastirma', 'is-zekasi-danismanligi-ve-bi-platformu', 'index.html'),
     title: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
