@@ -96,6 +96,22 @@ const routes = [
     },
   },
   {
+    pathname: '/gizlilik-politikasi',
+    output: path.join('gizlilik-politikasi', 'index.html'),
+    title: 'Gizlilik ve Çerez Politikası | Bi Analytic',
+    description: 'Bi Analytic web sitesinde kişisel verilerin, iletişim bilgilerinin ve analitik çerezlerin nasıl işlendiğini öğrenin.',
+    canonical: 'https://www.bianalytic.net/gizlilik-politikasi',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Gizlilik ve Çerez Politikası',
+      url: 'https://www.bianalytic.net/gizlilik-politikasi',
+      isPartOf: {'@id': 'https://www.bianalytic.net/#website'},
+      about: {'@id': organization['@id']},
+      inLanguage: 'tr',
+    },
+  },
+  {
     pathname: '/is-zekasi-danismanligi',
     output: path.join('is-zekasi-danismanligi', 'index.html'),
     title: 'İş Zekâsı Danışmanlığı | Bi Analytic',

@@ -3,6 +3,7 @@ import RestaurantProduct from './RestaurantProduct';
 import HerdProduct from './HerdProduct';
 import SMEConsultingPage from './SMEConsultingPage';
 import CustomAIPage from './CustomAIPage';
+import PrivacyPolicyPage from './PrivacyPolicyPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -818,7 +819,7 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Bi Analytic. Tüm hakları saklıdır.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <div className="relative group">
-              <a href="#" className="hover:text-white transition-colors cursor-help">Gizlilik Politikası</a>
+              <a href="/gizlilik-politikasi" className="hover:text-white transition-colors">Gizlilik Politikası</a>
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-800 text-xs text-white text-center rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none z-10 shadow-lg">
                 Verilerinizin nasıl korunduğunu ve işlendiğini öğrenin.
                 <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
@@ -839,6 +840,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/gizlilik-politikasi' || window.location.pathname.startsWith('/gizlilik-politikasi/')) {
+    return <PrivacyPolicyPage />;
+  }
+
   if (window.location.pathname === '/is-zekasi-danismanligi' || window.location.pathname.startsWith('/is-zekasi-danismanligi/')) {
     return <SMEConsultingPage />;
   }
