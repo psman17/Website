@@ -209,7 +209,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="h-64 w-full">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} initialDimension={{width: 512, height: 256}}>
                   <AreaChart data={revenueData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
                     <defs>
                       <linearGradient id="colorCurrent" x1="0" y1="0" x2="0" y2="1">
@@ -332,7 +332,7 @@ const InteractiveDemo = () => {
                   <div className="md:col-span-2 bg-navy-900 rounded-xl p-4 border border-navy-700">
                     <h4 className="text-sm font-medium text-gray-400 mb-4">Bölgesel Gelir Dağılımı</h4>
                     <div className="h-64">
-                      <ResponsiveContainer width="100%" height="100%">
+                      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} initialDimension={{width: 720, height: 256}}>
                         <BarChart data={[
                           { name: 'NA', value: 4000 },
                           { name: 'EMEA', value: 3000 },
