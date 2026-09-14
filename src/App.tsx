@@ -171,13 +171,13 @@ const Hero = () => {
               İş Zekâsı ve Operasyon Teknolojileri
             </div>
             <h1 className="text-5xl lg:text-6xl font-display font-bold text-navy-900 leading-[1.1] mb-6">
-              İşletmeler İçin İş Zekâsı ve <br/>
+              Türkiye’de İş Zekâsı, <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy-900 to-teal-600">
-                Operasyon Yazılımları
+                Yapay Zekâ ve Özel Yazılım
               </span>
             </h1>
             <p className="text-lg text-navy-800/80 mb-8 leading-relaxed max-w-xl">
-              Bianalytic; iş zekâsı danışmanlığı, firmalara ve kişilere özel yapay zekâ, operasyon ürünleri ve işletmeye özel yazılım geliştirme çözümleri sunar.
+              Bianalytic, Türkiye’de KOBİ’ler, kurumsal ekipler ve bireysel profesyoneller için iş zekâsı danışmanlığı, özel yapay zekâ, restoran ve sürü yönetimi ürünleri ile ihtiyaca özel yazılımlar geliştirir.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#cozumler" className="inline-flex justify-center items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-navy-900/20 hover:shadow-xl hover:-translate-y-0.5">
