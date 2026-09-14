@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RestaurantProduct from './RestaurantProduct';
 import HerdProduct from './HerdProduct';
 import SMEConsultingPage from './SMEConsultingPage';
+import CustomAIPage from './CustomAIPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -74,10 +75,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Çözümler', href: '#cozumler' },
     { name: 'İş Zekâsı', href: '/is-zekasi-danismanligi' },
+    { name: 'Yapay Zekâ', href: '/ozel-yapay-zeka' },
     { name: 'Bi Restoran', href: '/restoran' },
     { name: 'Bi Sürü', href: '/suru' },
     { name: 'Özel Yazılım', href: '#ozel-yazilim' },
-    { name: 'Hakkımızda', href: '#about' },
   ];
 
   return (
@@ -175,7 +176,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-lg text-navy-800/80 mb-8 leading-relaxed max-w-xl">
-              Bianalytic; iş zekâsı danışmanlığı, restoranlar için bulut tabanlı POS ve operasyon yönetimi, hayvancılık işletmeleri için sürü yönetimi ve şirketlere özel yazılım geliştirme çözümleri sunar.
+              Bianalytic; iş zekâsı danışmanlığı, firmalara ve kişilere özel yapay zekâ, operasyon ürünleri ve işletmeye özel yazılım geliştirme çözümleri sunar.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#cozumler" className="inline-flex justify-center items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-navy-900/20 hover:shadow-xl hover:-translate-y-0.5">
@@ -293,6 +294,16 @@ const Solutions = () => {
       accent: 'text-navy-900 bg-blue-50 border-blue-100',
       id: 'ozel-yazilim',
     },
+    {
+      category: 'Uygulamalı Yapay Zekâ',
+      title: 'Özel Yapay Zekâ',
+      description: 'Firmanızın veya kişisel çalışma düzeninizin tekrarlanan işlerini anlayan yapay zekâ asistanları ve kontrollü otomasyonlar kuruyoruz.',
+      detail: 'Süreç analizi, entegrasyon, çalışan sistem ve iyileştirme',
+      href: '/ozel-yapay-zeka',
+      cta: 'Yapay zekâ çözümlerini inceleyin',
+      icon: <Cpu className="h-7 w-7" />,
+      accent: 'text-violet-800 bg-violet-50 border-violet-100',
+    },
   ];
 
   return (
@@ -304,7 +315,7 @@ const Solutions = () => {
           <p className="text-gray-600 text-lg leading-relaxed">Danışmanlık uzmanlığımızı kendi ürünlerimiz ve işletmeye özel yazılım geliştirme yetkinliğimizle birleştiriyoruz.</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution, index) => (
             <motion.a
               id={solution.id}
@@ -314,7 +325,7 @@ const Solutions = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="group rounded-3xl border border-slate-200 bg-white p-7 md:p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl"
+              className="group rounded-3xl border border-slate-200 bg-white p-7 md:p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl md:last:col-span-2 lg:last:col-span-1"
             >
               <div className="flex items-start gap-5">
                 <div className={`flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border ${solution.accent}`}>
@@ -794,6 +805,7 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Hızlı Linkler</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="/is-zekasi-danismanligi" className="hover:text-teal-400 transition-colors">İş Zekâsı Danışmanlığı</a></li>
+              <li><a href="/ozel-yapay-zeka" className="hover:text-teal-400 transition-colors">Özel Yapay Zekâ</a></li>
               <li><a href="/restoran" className="hover:text-teal-400 transition-colors">Bi Restoran</a></li>
               <li><a href="/suru" className="hover:text-teal-400 transition-colors">Bi Sürü</a></li>
               <li><a href="#ozel-yazilim" className="hover:text-teal-400 transition-colors">Özel Yazılım</a></li>
@@ -829,6 +841,10 @@ const Footer = () => {
 export default function App() {
   if (window.location.pathname === '/is-zekasi-danismanligi' || window.location.pathname.startsWith('/is-zekasi-danismanligi/')) {
     return <SMEConsultingPage />;
+  }
+
+  if (window.location.pathname === '/ozel-yapay-zeka' || window.location.pathname.startsWith('/ozel-yapay-zeka/')) {
+    return <CustomAIPage />;
   }
 
   if (window.location.pathname === '/restoran' || window.location.pathname.startsWith('/restoran/')) {

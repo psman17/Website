@@ -6,10 +6,10 @@ const CONTACT_URL = 'mailto:mustafa.oz@bianalytic.net?subject=Ücretsiz veri ke�
 const globalNav = [
   ['Çözümler', '/#cozumler'],
   ['İş Zekâsı', '/is-zekasi-danismanligi'],
+  ['Yapay Zekâ', '/ozel-yapay-zeka'],
   ['Bi Restoran', '/restoran'],
   ['Bi Sürü', '/suru'],
   ['Özel Yazılım', '/#ozel-yazilim'],
-  ['Hakkımızda', '/#about'],
 ];
 
 const sectionNav = [
@@ -208,6 +208,7 @@ export default function SMEConsultingPage() {
               <h2 className="font-semibold text-white">Çözümler</h2>
               <ul className="mt-4 space-y-2 text-sm">
                 <li><a href="/is-zekasi-danismanligi" className="hover:text-teal-400">İş Zekâsı Danışmanlığı</a></li>
+                <li><a href="/ozel-yapay-zeka" className="hover:text-teal-400">Özel Yapay Zekâ</a></li>
                 <li><a href="/restoran" className="hover:text-teal-400">Bi Restoran</a></li>
                 <li><a href="/suru" className="hover:text-teal-400">Bi Sürü</a></li>
                 <li><a href="/#ozel-yazilim" className="hover:text-teal-400">Özel Yazılım</a></li>
