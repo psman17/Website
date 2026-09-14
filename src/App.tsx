@@ -8,6 +8,7 @@ import ContactPage from './ContactPage';
 import TermsOfUsePage from './TermsOfUsePage';
 import ConsultingComparisonPage from './ConsultingComparisonPage';
 import FastAnalyticsGuidePage from './FastAnalyticsGuidePage';
+import AboutPage from './AboutPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -814,7 +815,7 @@ const Footer = () => {
               <li><a href="/restoran" className="hover:text-teal-400 transition-colors">Bi Restoran</a></li>
               <li><a href="/suru" className="hover:text-teal-400 transition-colors">Bi Sürü</a></li>
               <li><a href="#ozel-yazilim" className="hover:text-teal-400 transition-colors">Özel Yazılım</a></li>
-              <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
+              <li><a href="/hakkimizda" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
               <li><a href="/iletisim" className="hover:text-teal-400 transition-colors">İletişim</a></li>
               <li><a href="/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu" className="hover:text-teal-400 transition-colors">Danışmanlık mı, BI Platformu mu?</a></li>
               <li><a href="/rehber/kobiler-icin-hizli-veri-analizi" className="hover:text-teal-400 transition-colors">KOBİ Veri Analizi Rehberi</a></li>
@@ -847,6 +848,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/hakkimizda' || window.location.pathname.startsWith('/hakkimizda/')) {
+    return <AboutPage />;
+  }
+
   if (window.location.pathname === '/rehber/kobiler-icin-hizli-veri-analizi' || window.location.pathname.startsWith('/rehber/kobiler-icin-hizli-veri-analizi/')) {
     return <FastAnalyticsGuidePage />;
   }

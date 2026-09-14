@@ -21,6 +21,13 @@ const organization = {
   url: 'https://www.bianalytic.net/',
   logo: 'https://www.bianalytic.net/Logo.png',
   email: 'info@bianalytic.net',
+  foundingDate: '2026-05',
+  founder: {'@id': 'https://www.bianalytic.net/hakkimizda#mustafa-oz'},
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Çanakkale',
+    addressCountry: 'TR',
+  },
 };
 
 const routes = [
@@ -93,6 +100,32 @@ const routes = [
           provider: {'@id': organization['@id']},
         },
       ],
+    },
+  },
+  {
+    pathname: '/hakkimizda',
+    output: path.join('hakkimizda', 'index.html'),
+    title: 'Hakkımızda | Bi Analytic',
+    description: 'Mayıs 2026’da Mustafa Öz tarafından Çanakkale’de kurulan Bi Analytic’in iş zekâsı, yapay zekâ, operasyon ürünleri ve özel yazılım yaklaşımı.',
+    canonical: 'https://www.bianalytic.net/hakkimizda',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'Person',
+        '@id': 'https://www.bianalytic.net/hakkimizda#mustafa-oz',
+        name: 'Mustafa Öz',
+        email: 'mustafoz170@gmail.com',
+        telephone: '+905437431754',
+        homeLocation: {'@type': 'Place', name: 'Çanakkale, Türkiye'},
+        worksFor: {'@id': organization['@id']},
+      }, {
+        '@type': 'AboutPage',
+        name: 'Bi Analytic Hakkımızda',
+        url: 'https://www.bianalytic.net/hakkimizda',
+        about: [{'@id': organization['@id']}, {'@id': 'https://www.bianalytic.net/hakkimizda#mustafa-oz'}],
+        isPartOf: {'@id': 'https://www.bianalytic.net/#website'},
+        inLanguage: 'tr',
+      }],
     },
   },
   {
