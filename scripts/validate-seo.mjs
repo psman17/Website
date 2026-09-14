@@ -3,6 +3,7 @@ import fs from 'node:fs';
 
 const expectedRoutes = [
   ['dist/index.html', 'https://www.bianalytic.net/'],
+  ['dist/is-zekasi-danismanligi/index.html', 'https://www.bianalytic.net/is-zekasi-danismanligi'],
   ['dist/restoran/index.html', 'https://www.bianalytic.net/restoran'],
   ['dist/suru/index.html', 'https://www.bianalytic.net/suru'],
 ];
@@ -57,6 +58,6 @@ for (const key of [
 ]) {
   assert(securityHeaders.has(key), `vercel.json missing ${key}`);
 }
-assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/restoran', '/suru']);
+assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/is-zekasi-danismanligi', '/restoran', '/suru']);
 
 console.log('robots.txt, sitemap.xml, 1200x630 OG image, redirects and security headers valid');
