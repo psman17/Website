@@ -2,6 +2,10 @@ import React from 'react';
 
 const sections = [
   {
+    title: 'Veri sorumlusu',
+    body: 'bianalytic.net kapsamında veri sorumlusu Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi’dir. Şirket merkezi İstiklal Mahallesi Şehit Mustafa Kaya Caddesi No: 57/11, Çan / Çanakkale adresindedir.',
+  },
+  {
     title: 'Topladığımız bilgiler',
     body: 'Bize e-posta, telefon veya WhatsApp üzerinden ulaştığınızda paylaştığınız iletişim ve talep bilgilerini, talebinizi yanıtlamak ve hizmet sürecini yürütmek amacıyla işleriz.',
   },
@@ -15,7 +19,7 @@ const sections = [
   },
   {
     title: 'Haklarınız',
-    body: '6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamındaki bilgi alma, düzeltme, silme ve işleme itiraz haklarınıza ilişkin taleplerinizi info@bianalytic.net adresine iletebilirsiniz.',
+    body: '6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamındaki bilgi alma, düzeltme, silme ve işleme itiraz haklarınıza ilişkin taleplerinizi mustafa.oz@bianalytic.net adresine iletebilirsiniz.',
   },
 ];
 
@@ -49,7 +53,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="mt-10 rounded-3xl bg-navy-900 p-7 text-slate-200">
           <h2 className="font-display text-2xl font-bold text-white">İletişim</h2>
-          <p className="mt-3">Gizlilik ve kişisel veri talepleri için: <a className="font-bold text-teal-300 underline" href="mailto:info@bianalytic.net">info@bianalytic.net</a></p>
+          <p className="mt-3">Gizlilik ve kişisel veri talepleri için: <a className="font-bold text-teal-300 underline" href="mailto:mustafa.oz@bianalytic.net">mustafa.oz@bianalytic.net</a></p>
           <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold"><a className="text-teal-300 underline" href="/iletisim">İletişim</a><a className="text-teal-300 underline" href="/kullanim-kosullari">Kullanım Koşulları</a></div>
         </section>
       </main>

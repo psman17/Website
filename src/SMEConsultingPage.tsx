@@ -199,7 +199,7 @@ export default function SMEConsultingPage() {
             <div>
               <h2 className="font-semibold text-white">İletişim</h2>
               <ul className="mt-4 space-y-3 text-sm">
-                <li className="flex items-center gap-2"><Mail size={16} className="text-teal-500"/> info@bianalytic.net</li>
+                <li className="flex items-center gap-2"><Mail size={16} className="text-teal-500"/> mustafa.oz@bianalytic.net</li>
                 <li className="flex items-center gap-2"><Phone size={16} className="text-teal-500"/> +90 543 743 1754</li>
                 <li className="flex items-center gap-2"><MapPin size={16} className="text-teal-500"/> Çanakkale</li>
               </ul>

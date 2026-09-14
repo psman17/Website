@@ -2,6 +2,10 @@ import React from 'react';
 
 const sections = [
   {
+    title: 'Hizmet sağlayıcı',
+    body: 'Bu site Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi tarafından işletilir. Şirket merkezi İstiklal Mahallesi Şehit Mustafa Kaya Caddesi No: 57/11, Çan / Çanakkale adresindedir. Çan Vergi Dairesi vergi numarası 1691240862, ticaret sicil numarası ÇAN/2295, oda sicil numarası 21842 ve MERSİS numarası 0169124086200001’dir.',
+  },
+  {
     title: 'Kapsam',
     body: 'Bu koşullar bianalytic.net web sitesinin kullanımını düzenler. İş zekâsı danışmanlığı, özel yapay zekâ, yazılım geliştirme ve ürün hizmetlerine ilişkin proje kapsamı ile ticari koşullar ayrıca hazırlanacak teklif veya sözleşmede belirlenir.',
   },
@@ -55,7 +59,7 @@ export default function TermsOfUsePage() {
 
         <section className="mt-10 rounded-3xl bg-navy-900 p-7 text-slate-200">
           <h2 className="font-display text-2xl font-bold text-white">Sorularınız için</h2>
-          <p className="mt-3">Koşullarla ilgili sorularınızı <a className="font-bold text-teal-300 underline" href="mailto:info@bianalytic.net">info@bianalytic.net</a> adresine iletebilirsiniz.</p>
+          <p className="mt-3">Koşullarla ilgili sorularınızı <a className="font-bold text-teal-300 underline" href="mailto:mustafa.oz@bianalytic.net">mustafa.oz@bianalytic.net</a> adresine iletebilirsiniz.</p>
           <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold"><a className="text-teal-300 underline" href="/gizlilik-politikasi">Gizlilik Politikası</a><a className="text-teal-300 underline" href="/iletisim">İletişim</a></div>
         </section>
       </main>

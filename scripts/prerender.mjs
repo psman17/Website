@@ -18,16 +18,26 @@ const organization = {
   '@type': 'Organization',
   '@id': 'https://www.bianalytic.net/#organization',
   name: 'Bi Analytic',
+  legalName: 'Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi',
   url: 'https://www.bianalytic.net/',
   logo: 'https://www.bianalytic.net/Logo.png',
-  email: 'info@bianalytic.net',
+  email: 'mustafa.oz@bianalytic.net',
+  telephone: '+905437431754',
+  taxID: '1691240862',
   foundingDate: '2026-05',
   founder: {'@id': 'https://www.bianalytic.net/hakkimizda#mustafa-oz'},
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Çanakkale',
+    streetAddress: 'İstiklal Mah. Şehit Mustafa Kaya Cd. No: 57/11',
+    addressLocality: 'Çan',
+    addressRegion: 'Çanakkale',
     addressCountry: 'TR',
   },
+  identifier: [
+    {'@type': 'PropertyValue', name: 'Ticaret Sicil No', value: 'ÇAN/2295'},
+    {'@type': 'PropertyValue', name: 'Oda Sicil No', value: '21842'},
+    {'@type': 'PropertyValue', name: 'MERSİS No', value: '0169124086200001'},
+  ],
 };
 
 const routes = [
@@ -106,7 +116,7 @@ const routes = [
     pathname: '/hakkimizda',
     output: path.join('hakkimizda', 'index.html'),
     title: 'Hakkımızda | Bi Analytic',
-    description: 'Mayıs 2026’da Mustafa Öz tarafından Çanakkale’de kurulan Bi Analytic’in iş zekâsı, yapay zekâ, operasyon ürünleri ve özel yazılım yaklaşımı.',
+    description: 'Mayıs 2026’da Çanakkale’de kurulan Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketinin iş zekâsı, yapay zekâ ve özel yazılım yaklaşımı.',
     canonical: 'https://www.bianalytic.net/hakkimizda',
     schema: {
       '@context': 'https://schema.org',
@@ -114,9 +124,7 @@ const routes = [
         '@type': 'Person',
         '@id': 'https://www.bianalytic.net/hakkimizda#mustafa-oz',
         name: 'Mustafa Öz',
-        email: 'mustafoz170@gmail.com',
-        telephone: '+905437431754',
-        homeLocation: {'@type': 'Place', name: 'Çanakkale, Türkiye'},
+        jobTitle: 'Kurucu',
         worksFor: {'@id': organization['@id']},
       }, {
         '@type': 'AboutPage',
