@@ -3,6 +3,7 @@ import RestaurantProduct from './RestaurantProduct';
 import HerdProduct from './HerdProduct';
 import SMEConsultingPage from './SMEConsultingPage';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 import { 
   BarChart3, 
   Database, 
@@ -766,7 +767,7 @@ export default function App() {
         <CTA />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
-
