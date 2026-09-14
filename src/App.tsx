@@ -801,7 +801,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">İletişim</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-teal-500" /> <a href="mailto:info@bianalytic.net" className="hover:text-white">info@bianalytic.net</a></li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-teal-500" /> <a href="mailto:mustafa.oz@bianalytic.net" className="hover:text-white">mustafa.oz@bianalytic.net</a></li>
               <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-teal-500" /> <a href="tel:+905437431754" className="hover:text-white">+90 543 743 1754</a></li>
               <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-teal-500" /> Çanakkale </li>
             </ul>

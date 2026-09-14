@@ -4,8 +4,8 @@ import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 const contactMethods = [
   {
     title: 'E-posta',
-    value: 'info@bianalytic.net',
-    href: 'mailto:info@bianalytic.net',
+    value: 'mustafa.oz@bianalytic.net',
+    href: 'mailto:mustafa.oz@bianalytic.net',
     icon: Mail,
   },
   {
@@ -22,7 +22,7 @@ const contactMethods = [
   },
   {
     title: 'Konum',
-    value: 'Çanakkale, Türkiye',
+    value: 'İstiklal Mah. Şehit Mustafa Kaya Cad. No: 57/11, Çan / Çanakkale',
     icon: MapPin,
   },
 ];
@@ -46,6 +46,7 @@ export default function ContactPage() {
           <p className="mt-6 text-lg leading-8 text-slate-600">
             İş zekâsı, özel yapay zekâ, restoran veya sürü yönetimi ürünleri ve işletmenize özel yazılım ihtiyaçlarınızı birlikte değerlendirelim.
           </p>
+          <p className="mt-4 font-semibold text-navy-900">Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi</p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
@@ -69,7 +70,7 @@ export default function ContactPage() {
           <section className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
             <h2 className="font-display text-2xl font-bold text-navy-900">İhtiyacınızı anlatın</h2>
             <p className="mt-3 leading-7 text-slate-600">Form, bilgilerinizi sunucuda saklamaz; gönderdiğinizde varsayılan e-posta uygulamanız açılır.</p>
-            <form className="mt-7 space-y-5" action="mailto:info@bianalytic.net" method="post" encType="text/plain">
+            <form className="mt-7 space-y-5" action="mailto:mustafa.oz@bianalytic.net" method="post" encType="text/plain">
               <label className="block text-sm font-semibold text-navy-900">Adınız ve şirketiniz
                 <input required name="Ad ve şirket" className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 font-normal outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
               </label>

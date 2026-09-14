@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BarChart3, BrainCircuit, Building2, Mail, MapPin, Phone, UserRound } from 'lucide-react';
+import { ArrowRight, BarChart3, BrainCircuit, Building2, Mail, MapPin, Phone } from 'lucide-react';
 
 const services = [
   {
@@ -46,18 +46,19 @@ export default function AboutPage() {
             <div>
               <p className="text-sm font-bold uppercase tracking-[.2em] text-teal-600">Hakkımızda</p>
               <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-navy-900 sm:text-6xl">Bi Analytic Kimdir?</h1>
-              <p className="mt-7 max-w-3xl text-xl leading-8 text-slate-600">Bi Analytic, Mustafa Öz tarafından Mayıs 2026’da Çanakkale’de kurulan bir iş zekâsı danışmanlığı ve özel yazılım firmasıdır.</p>
+              <p className="mt-7 max-w-3xl text-xl leading-8 text-slate-600">Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi, Mayıs 2026’da Çanakkale’de kurulan bir iş zekâsı danışmanlığı ve özel yazılım şirketidir.</p>
               <p className="mt-4 max-w-3xl leading-7 text-slate-600">Şirket; iş zekâsı araçlarını müşterinin veri yapısına göre kullanır, özel yapay zekâ ve yazılım geliştirir, restoran ve hayvancılık operasyonlarına yönelik kendi ürünlerini sunar. Bi Analytic tek bir BI yazılımı değildir.</p>
             </div>
             <aside className="rounded-3xl bg-navy-900 p-8 text-white shadow-2xl">
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300"><UserRound size={28} /></span>
-              <p className="mt-6 text-sm font-bold uppercase tracking-[.16em] text-teal-300">Kurucu</p>
-              <h2 className="mt-2 font-display text-3xl font-bold">Mustafa Öz</h2>
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300"><Building2 size={28} /></span>
+              <p className="mt-6 text-sm font-bold uppercase tracking-[.16em] text-teal-300">Şirket bilgileri</p>
+              <h2 className="mt-2 font-display text-2xl font-bold">Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi</h2>
               <dl className="mt-7 space-y-4 text-sm text-slate-200">
-                <div className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">Merkez</dt><dd>Çanakkale, Türkiye</dd></div></div>
-                <div className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">E-posta</dt><dd><a className="hover:text-teal-300" href="mailto:mustafoz170@gmail.com">mustafoz170@gmail.com</a></dd></div></div>
+                <div className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">Merkez</dt><dd>İstiklal Mah. Şehit Mustafa Kaya Cad. No: 57/11, Çan / Çanakkale</dd></div></div>
+                <div className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">E-posta</dt><dd><a className="hover:text-teal-300" href="mailto:mustafa.oz@bianalytic.net">mustafa.oz@bianalytic.net</a></dd></div></div>
                 <div className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">Telefon</dt><dd><a className="hover:text-teal-300" href="tel:+905437431754">0543 743 1754</a></dd></div></div>
               </dl>
+              <p className="mt-6 border-t border-white/15 pt-5 text-sm text-slate-300">Kurucu: Mustafa Öz</p>
             </aside>
           </div>
         </section>
@@ -106,7 +107,7 @@ export default function AboutPage() {
         </section>
       </main>
 
-      <footer className="bg-navy-900 py-10 text-slate-400"><div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 text-sm md:flex-row md:items-center md:justify-between"><a href="/" className="inline-flex w-fit rounded-xl bg-white px-3 py-2"><img src="/Logo.png" alt="Bi Analytic" className="h-11 w-auto" /></a><div className="flex flex-wrap gap-5"><a href="/iletisim" className="hover:text-white">İletişim</a><a href="/gizlilik-politikasi" className="hover:text-white">Gizlilik</a><a href="/kullanim-kosullari" className="hover:text-white">Kullanım Koşulları</a></div><a href="mailto:mustafoz170@gmail.com" className="flex items-center gap-2 font-semibold text-white hover:text-teal-400"><Mail size={16} /> mustafoz170@gmail.com</a></div></footer>
+      <footer className="bg-navy-900 py-10 text-slate-400"><div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 text-sm md:flex-row md:items-center md:justify-between"><a href="/" className="inline-flex w-fit rounded-xl bg-white px-3 py-2"><img src="/Logo.png" alt="Bi Analytic" className="h-11 w-auto" /></a><div className="flex flex-wrap gap-5"><a href="/iletisim" className="hover:text-white">İletişim</a><a href="/gizlilik-politikasi" className="hover:text-white">Gizlilik</a><a href="/kullanim-kosullari" className="hover:text-white">Kullanım Koşulları</a></div><a href="mailto:mustafa.oz@bianalytic.net" className="flex items-center gap-2 font-semibold text-white hover:text-teal-400"><Mail size={16} /> mustafa.oz@bianalytic.net</a></div></footer>
     </div>
   );
 }
