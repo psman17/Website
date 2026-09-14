@@ -72,12 +72,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: 'Çözümler', href: '#cozumler' },
+    { name: 'İş Zekâsı', href: '/is-zekasi-danismanligi' },
     { name: 'Bi Restoran', href: '/restoran' },
     { name: 'Bi Sürü', href: '/suru' },
-    { name: 'Şablonlar', href: '#templates' },
-    { name: 'Neden Biz?', href: '#services' },
-    { name: 'Referanslar', href: '#cases' },
-    { name: 'Teknolojiler', href: '#tech' },
+    { name: 'Özel Yazılım', href: '#ozel-yazilim' },
     { name: 'Hakkımızda', href: '#about' },
   ];
 
@@ -90,7 +89,7 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <a key={link.name} href={link.href} className="text-sm font-medium text-navy-800 hover:text-teal-600 transition-colors">
                 {link.name}
@@ -102,7 +101,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Nav Toggle */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-navy-900">
               {isOpen ? <X /> : <Menu />}
             </button>
@@ -117,7 +116,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -167,24 +166,24 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-600"></span>
               </span>
-              KOBİ'ler İçin Yeni Nesil İş Zekası
+              İş Zekâsı ve Operasyon Teknolojileri
             </div>
             <h1 className="text-5xl lg:text-6xl font-display font-bold text-navy-900 leading-[1.1] mb-6">
-              Verilerinizi Kâra Dönüştüren <br/>
+              İşletmeler İçin İş Zekâsı ve <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy-900 to-teal-600">
-                Hazır ve Ekonomik
-              </span> Çözümler
+                Operasyon Yazılımları
+              </span>
             </h1>
             <p className="text-lg text-navy-800/80 mb-8 leading-relaxed max-w-xl">
-              Ücretsiz veri keşfiyle mevcut yapınızı birlikte inceleyelim. Verileriniz hazırsa 48 saat içinde entegrasyon, veri modeli ve dashboard tasarımını başlatalım.
+              Bianalytic; iş zekâsı danışmanlığı, restoranlar için bulut tabanlı POS ve operasyon yönetimi, hayvancılık işletmeleri için sürü yönetimi ve şirketlere özel yazılım geliştirme çözümleri sunar.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="inline-flex justify-center items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-navy-900/20 hover:shadow-xl hover:-translate-y-0.5">
-                KOBİ Başlangıç Paketi
+              <a href="#cozumler" className="inline-flex justify-center items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-navy-900/20 hover:shadow-xl hover:-translate-y-0.5">
+                Çözümleri İnceleyin
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a href="#templates" className="inline-flex justify-center items-center gap-2 bg-white hover:bg-gray-50 text-navy-900 border border-gray-200 px-8 py-4 rounded-full font-medium transition-all">
-                Şablonları İnceleyin
+              <a href="#contact" className="inline-flex justify-center items-center gap-2 bg-white hover:bg-gray-50 text-navy-900 border border-gray-200 px-8 py-4 rounded-full font-medium transition-all">
+                İhtiyacınızı Konuşalım
               </a>
             </div>
           </motion.div>
@@ -245,6 +244,94 @@ const Hero = () => {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Solutions = () => {
+  const solutions = [
+    {
+      category: 'Danışmanlık',
+      title: 'İş Zekâsı',
+      description: 'Farklı kaynaklardaki verilerinizi bir araya getiriyor; veri modeli, dashboard ve karar destek yapıları kuruyoruz.',
+      detail: 'Qlik Sense, Tableau ve ihtiyaca uygun diğer teknolojiler',
+      href: '/is-zekasi-danismanligi',
+      cta: 'Danışmanlığı inceleyin',
+      icon: <BarChart3 className="h-7 w-7" />,
+      accent: 'text-teal-700 bg-teal-50 border-teal-100',
+    },
+    {
+      category: 'Restoran Teknolojisi',
+      title: 'Bi Restoran',
+      description: 'Siparişten mutfağa, QR menüden stok ve raporlamaya kadar restoran operasyonunu tek platformda yönetin.',
+      detail: 'Bulut tabanlı POS ve restoran operasyon yönetimi',
+      href: '/restoran',
+      cta: 'Bi Restoran’ı keşfedin',
+      logo: '/bi-restoran-logo.jpg',
+      accent: 'text-teal-700 bg-cyan-50 border-cyan-100',
+    },
+    {
+      category: 'Tarım Teknolojisi',
+      title: 'Bi Sürü',
+      description: 'Hayvan kayıtları, sağlık, üreme, süt, yem, finans ve çiftlik performansını tek merkezden takip edin.',
+      detail: 'Bulut tabanlı sürü ve çiftlik yönetimi',
+      href: '/suru',
+      cta: 'Bi Sürü’yü keşfedin',
+      logo: '/bi-suru-logo.svg',
+      accent: 'text-emerald-800 bg-emerald-50 border-emerald-100',
+    },
+    {
+      category: 'Yazılım Geliştirme',
+      title: 'Özel Yazılım',
+      description: 'Hazır bir ürünün karşılamadığı süreçleriniz için işletmenize uygun web, yönetim ve entegrasyon uygulamaları geliştiriyoruz.',
+      detail: 'Analizden geliştirmeye, işletmeye özel çözüm',
+      href: '#contact',
+      cta: 'Projenizi konuşalım',
+      icon: <Cpu className="h-7 w-7" />,
+      accent: 'text-navy-900 bg-blue-50 border-blue-100',
+      id: 'ozel-yazilim',
+    },
+  ];
+
+  return (
+    <section id="cozumler" className="bg-white py-24 scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mb-14">
+          <p className="text-teal-600 font-semibold tracking-wide uppercase text-sm mb-2">Ne yapıyoruz?</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-navy-900 mb-4">Veriden günlük operasyona, tek bir teknoloji ortağı</h2>
+          <p className="text-gray-600 text-lg leading-relaxed">Danışmanlık uzmanlığımızı kendi ürünlerimiz ve işletmeye özel yazılım geliştirme yetkinliğimizle birleştiriyoruz.</p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {solutions.map((solution, index) => (
+            <motion.a
+              id={solution.id}
+              key={solution.title}
+              href={solution.href}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
+              className="group rounded-3xl border border-slate-200 bg-white p-7 md:p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl"
+            >
+              <div className="flex items-start gap-5">
+                <div className={`flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border ${solution.accent}`}>
+                  {solution.logo ? <img src={solution.logo} alt={`${solution.title} logosu`} className="h-full w-full object-cover" /> : solution.icon}
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[.18em] text-teal-600">{solution.category}</p>
+                  <h3 className="mt-2 text-2xl font-display font-bold text-navy-900">{solution.title}</h3>
+                </div>
+              </div>
+              <p className="mt-6 text-base leading-7 text-slate-600">{solution.description}</p>
+              <p className="mt-4 text-sm font-semibold text-navy-800">{solution.detail}</p>
+              <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-teal-700">
+                {solution.cta}<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>
@@ -407,10 +494,10 @@ const Templates = () => {
     <section id="templates" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-teal-600 font-semibold tracking-wide uppercase text-sm mb-2">Tak & Çalıştır</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-navy-900 mb-4">Hazır Dashboard Şablonları</h3>
+          <h2 className="text-teal-600 font-semibold tracking-wide uppercase text-sm mb-2">İş Zekâsı</h2>
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-navy-900 mb-4">Dashboard ve Raporlama Çözümleri</h3>
           <p className="text-gray-600 text-lg">
-            Sıfırdan tasarım beklemenize gerek yok. Kendi verinizi bağlayın, işletmenize uygun hazır şablonlarımızla anında kullanmaya başlayın.
+            Satış, finans, stok ve pazarlama verileriniz için hazır metriklerden yararlanıyor; dashboardları veri kaynağınıza ve karar ihtiyacınıza göre uyarlıyoruz.
           </p>
         </div>
 
@@ -657,7 +744,7 @@ const CTA = () => {
           İşletmenizi Büyütmeye Hazır Mısınız?
         </h2>
         <p className="text-teal-50 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-          Veri kaynaklarınızı ve raporlama ihtiyacınızı birlikte değerlendirmek için ücretsiz veri keşfi görüşmesi planlayın.
+          İş zekâsı, operasyon yazılımı veya işletmenize özel bir uygulama ihtiyacınızı birlikte değerlendirelim.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a 
@@ -666,7 +753,7 @@ const CTA = () => {
             rel="noopener noreferrer"
             className="inline-flex justify-center items-center bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
-            Ücretsiz KOBİ Veri Analizi
+            İhtiyacınızı Anlatın
           </a>
           <a 
             href="mailto:mustafa.oz@bianalytic.net"
@@ -690,7 +777,7 @@ const Footer = () => {
               <img src="/Logo.png" alt="Bi Analytic" className="h-[45px] w-auto object-contain" />
             </div>
             <p className="text-sm max-w-xs mb-6">
-              Veriyi stratejik bir avantaja dönüştüren modern iş zekası ve veri mühendisliği danışmanlık firması.
+              İş zekâsı danışmanlığı, operasyon ürünleri ve işletmeye özel yazılım geliştirme çözümleri.
             </p>
           </div>
           
@@ -706,11 +793,11 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Hızlı Linkler</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#services" className="hover:text-teal-400 transition-colors">Hizmetler</a></li>
-              <li><a href="#cases" className="hover:text-teal-400 transition-colors">Referanslar</a></li>
-              <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
               <li><a href="/is-zekasi-danismanligi" className="hover:text-teal-400 transition-colors">İş Zekâsı Danışmanlığı</a></li>
-              <li><a href="#" className="hover:text-teal-400 transition-colors">Kariyer</a></li>
+              <li><a href="/restoran" className="hover:text-teal-400 transition-colors">Bi Restoran</a></li>
+              <li><a href="/suru" className="hover:text-teal-400 transition-colors">Bi Sürü</a></li>
+              <li><a href="#ozel-yazilim" className="hover:text-teal-400 transition-colors">Özel Yazılım</a></li>
+              <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
             </ul>
           </div>
         </div>
@@ -753,10 +840,11 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-light-bg font-sans selection:bg-teal-500/30">
+    <div className="min-h-screen overflow-x-hidden bg-light-bg font-sans selection:bg-teal-500/30">
       <Navbar />
       <main>
         <Hero />
+        <Solutions />
         <Templates />
         <InteractiveDemo />
         <Advantages />
