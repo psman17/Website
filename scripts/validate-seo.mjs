@@ -3,6 +3,7 @@ import fs from 'node:fs';
 
 const expectedRoutes = [
   ['dist/index.html', 'https://www.bianalytic.net/'],
+  ['dist/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/index.html', 'https://www.bianalytic.net/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu'],
   ['dist/iletisim/index.html', 'https://www.bianalytic.net/iletisim'],
   ['dist/kullanim-kosullari/index.html', 'https://www.bianalytic.net/kullanim-kosullari'],
   ['dist/gizlilik-politikasi/index.html', 'https://www.bianalytic.net/gizlilik-politikasi'],
@@ -62,6 +63,6 @@ for (const key of [
 ]) {
   assert(securityHeaders.has(key), `vercel.json missing ${key}`);
 }
-assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/iletisim', '/kullanim-kosullari', '/gizlilik-politikasi', '/is-zekasi-danismanligi', '/ozel-yapay-zeka', '/restoran', '/suru']);
+assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu', '/iletisim', '/kullanim-kosullari', '/gizlilik-politikasi', '/is-zekasi-danismanligi', '/ozel-yapay-zeka', '/restoran', '/suru']);
 
 console.log('robots.txt, sitemap.xml, 1200x630 OG image, redirects and security headers valid');

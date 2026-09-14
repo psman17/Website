@@ -6,6 +6,7 @@ import CustomAIPage from './CustomAIPage';
 import PrivacyPolicyPage from './PrivacyPolicyPage';
 import ContactPage from './ContactPage';
 import TermsOfUsePage from './TermsOfUsePage';
+import ConsultingComparisonPage from './ConsultingComparisonPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -814,6 +815,7 @@ const Footer = () => {
               <li><a href="#ozel-yazilim" className="hover:text-teal-400 transition-colors">Özel Yazılım</a></li>
               <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
               <li><a href="/iletisim" className="hover:text-teal-400 transition-colors">İletişim</a></li>
+              <li><a href="/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu" className="hover:text-teal-400 transition-colors">Danışmanlık mı, BI Platformu mu?</a></li>
             </ul>
           </div>
         </div>
@@ -843,6 +845,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu' || window.location.pathname.startsWith('/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/')) {
+    return <ConsultingComparisonPage />;
+  }
+
   if (window.location.pathname === '/iletisim' || window.location.pathname.startsWith('/iletisim/')) {
     return <ContactPage />;
   }
