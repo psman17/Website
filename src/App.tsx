@@ -4,6 +4,8 @@ import HerdProduct from './HerdProduct';
 import SMEConsultingPage from './SMEConsultingPage';
 import CustomAIPage from './CustomAIPage';
 import PrivacyPolicyPage from './PrivacyPolicyPage';
+import ContactPage from './ContactPage';
+import TermsOfUsePage from './TermsOfUsePage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -796,8 +798,8 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">İletişim</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-teal-500" /> info@bianalytic.net</li>
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-teal-500" /> +90 543 743 1754</li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-teal-500" /> <a href="mailto:info@bianalytic.net" className="hover:text-white">info@bianalytic.net</a></li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-teal-500" /> <a href="tel:+905437431754" className="hover:text-white">+90 543 743 1754</a></li>
               <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-teal-500" /> Çanakkale </li>
             </ul>
           </div>
@@ -811,6 +813,7 @@ const Footer = () => {
               <li><a href="/suru" className="hover:text-teal-400 transition-colors">Bi Sürü</a></li>
               <li><a href="#ozel-yazilim" className="hover:text-teal-400 transition-colors">Özel Yazılım</a></li>
               <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
+              <li><a href="/iletisim" className="hover:text-teal-400 transition-colors">İletişim</a></li>
             </ul>
           </div>
         </div>
@@ -826,7 +829,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="relative group">
-              <a href="#" className="hover:text-white transition-colors cursor-help">Kullanım Şartları</a>
+              <a href="/kullanim-kosullari" className="hover:text-white transition-colors">Kullanım Koşulları</a>
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-800 text-xs text-white text-center rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all pointer-events-none z-10 shadow-lg">
                 Hizmetlerimizi kullanım koşullarını ve yasal haklarınızı inceleyin.
                 <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
@@ -840,6 +843,14 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/iletisim' || window.location.pathname.startsWith('/iletisim/')) {
+    return <ContactPage />;
+  }
+
+  if (window.location.pathname === '/kullanim-kosullari' || window.location.pathname.startsWith('/kullanim-kosullari/')) {
+    return <TermsOfUsePage />;
+  }
+
   if (window.location.pathname === '/gizlilik-politikasi' || window.location.pathname.startsWith('/gizlilik-politikasi/')) {
     return <PrivacyPolicyPage />;
   }

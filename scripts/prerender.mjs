@@ -28,7 +28,7 @@ const routes = [
     pathname: '/',
     output: 'index.html',
     title: 'Bi Analytic | İş Zekâsı ve Yazılım Çözümleri',
-    description: 'Bi Analytic; iş zekâsı, özel yapay zekâ, restoran POS, sürü yönetimi ve işletmeye özel yazılım çözümleri geliştirir.',
+    description: 'Bianalytic, Türkiye’de KOBİ’ler, kurumsal ekipler ve profesyoneller için iş zekâsı, özel yapay zekâ ve özel yazılım çözümleri geliştirir.',
     canonical: 'https://www.bianalytic.net/',
     schema: {
       '@context': 'https://schema.org',
@@ -93,6 +93,39 @@ const routes = [
           provider: {'@id': organization['@id']},
         },
       ],
+    },
+  },
+  {
+    pathname: '/iletisim',
+    output: path.join('iletisim', 'index.html'),
+    title: 'İletişim | Bi Analytic',
+    description: 'İş zekâsı, özel yapay zekâ, Bi Restoran, Bi Sürü ve işletmeye özel yazılım ihtiyaçlarınız için Bi Analytic ile iletişime geçin.',
+    canonical: 'https://www.bianalytic.net/iletisim',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'ContactPage',
+        name: 'Bi Analytic İletişim',
+        url: 'https://www.bianalytic.net/iletisim',
+        about: {'@id': organization['@id']},
+        inLanguage: 'tr',
+      }],
+    },
+  },
+  {
+    pathname: '/kullanim-kosullari',
+    output: path.join('kullanim-kosullari', 'index.html'),
+    title: 'Kullanım Koşulları | Bi Analytic',
+    description: 'Bi Analytic web sitesi ile danışmanlık, yapay zekâ, ürün ve özel yazılım hizmetlerine ilişkin temel kullanım koşulları.',
+    canonical: 'https://www.bianalytic.net/kullanim-kosullari',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Kullanım Koşulları',
+      url: 'https://www.bianalytic.net/kullanim-kosullari',
+      isPartOf: {'@id': 'https://www.bianalytic.net/#website'},
+      about: {'@id': organization['@id']},
+      inLanguage: 'tr',
     },
   },
   {
