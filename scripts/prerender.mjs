@@ -96,6 +96,25 @@ const routes = [
     },
   },
   {
+    pathname: '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
+    output: path.join('karsilastirma', 'is-zekasi-danismanligi-ve-bi-platformu', 'index.html'),
+    title: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
+    description: 'Hazır BI platformu ile Bianalytic danışmanlığını veri hazırlığı, ekip ihtiyacı, özelleştirme, maliyet modeli ve süreç sahipliği açısından karşılaştırın.',
+    canonical: 'https://www.bianalytic.net/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'WebPage',
+        name: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
+        url: 'https://www.bianalytic.net/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
+        description: 'Hazır BI platformu ile Bianalytic danışmanlığı arasındaki farkları açıklayan karar rehberi.',
+        about: {'@id': 'https://www.bianalytic.net/#business-intelligence-service'},
+        isPartOf: {'@id': 'https://www.bianalytic.net/#website'},
+        inLanguage: 'tr',
+      }],
+    },
+  },
+  {
     pathname: '/iletisim',
     output: path.join('iletisim', 'index.html'),
     title: 'İletişim | Bi Analytic',

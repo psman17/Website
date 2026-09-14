@@ -22,6 +22,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu", "destination": "/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/index.html" },
     { "source": "/iletisim", "destination": "/iletisim/index.html" },
     { "source": "/kullanim-kosullari", "destination": "/kullanim-kosullari/index.html" },
     { "source": "/gizlilik-politikasi", "destination": "/gizlilik-politikasi/index.html" },
