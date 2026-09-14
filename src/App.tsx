@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RestaurantProduct from './RestaurantProduct';
 import HerdProduct from './HerdProduct';
+import SMEConsultingPage from './SMEConsultingPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -24,7 +25,6 @@ import {
   Package,
   Zap,
   Clock,
-  CreditCard,
   LayoutTemplate
 } from 'lucide-react';
 import { 
@@ -176,7 +176,7 @@ const Hero = () => {
               </span> Çözümler
             </h1>
             <p className="text-lg text-navy-800/80 mb-8 leading-relaxed max-w-xl">
-              Büyük IT bütçelerine ve aylarca süren projelere son. KOBİ'lere özel hazır dashboard şablonlarımızla verilerinizi 48 saat içinde aksiyona dönüştürmeye başlayın.
+              Ücretsiz veri keşfiyle mevcut yapınızı birlikte inceleyelim. Verileriniz hazırsa 48 saat içinde entegrasyon, veri modeli ve dashboard tasarımını başlatalım.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="inline-flex justify-center items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-navy-900/20 hover:shadow-xl hover:-translate-y-0.5">
@@ -443,18 +443,18 @@ const Advantages = () => {
   const advantages = [
     {
       icon: <Clock className="w-6 h-6 text-teal-600" />,
-      title: "Hızlı Kurulum (48 Saat)",
-      description: "Aylarca süren yazılım projelerini unutun. Hazır altyapımız sayesinde verilerinizi 48 saat içinde görselleştiriyoruz."
+      title: "48 Saatte Veri Keşfi",
+      description: "Veri yapınızı ve raporlama ihtiyacınızı inceliyor; veriler hazırsa entegrasyon, modelleme ve dashboard tasarımını başlatıyoruz."
     },
     {
-      icon: <CreditCard className="w-6 h-6 text-teal-600" />,
-      title: "KOBİ Dostu Fiyatlandırma",
-      description: "Büyük kurumsal ajansların aksine, sürpriz maliyetler çıkarmayan, şeffaf ve uygun fiyatlı paketler sunuyoruz."
+      icon: <Layers className="w-6 h-6 text-teal-600" />,
+      title: "İhtiyaca Göre Çalışma",
+      description: "Ücretsiz veri keşfinin ardından kapsamı belirliyor; projeyi ihtiyacınıza uygun çalışma modeliyle planlıyoruz."
     },
     {
       icon: <Zap className="w-6 h-6 text-teal-600" />,
-      title: "Kolay Adaptasyon",
-      description: "Teknik personel çalıştırmanıza gerek yok. Kullanımı son derece kolay panellerle herkes veriyi anında okuyabilir."
+      title: "BT Ekibinizle Uyumlu",
+      description: "BT ekibi olmayan işletmelerle, küçük BT ekipleriyle ve belirli bir projede dış uzmanlık arayan kurumsal ekiplerle çalışıyoruz."
     },
     {
       icon: <LayoutTemplate className="w-6 h-6 text-teal-600" />,
@@ -657,7 +657,7 @@ const CTA = () => {
           İşletmenizi Büyütmeye Hazır Mısınız?
         </h2>
         <p className="text-teal-50 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-          KOBİ'lere özel uygun fiyatlı paketlerimiz ve anında kullanıma hazır şablonlarımızla tanışmak için ücretsiz veri analizi randevusu alın.
+          Veri kaynaklarınızı ve raporlama ihtiyacınızı birlikte değerlendirmek için ücretsiz veri keşfi görüşmesi planlayın.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a 
@@ -709,6 +709,7 @@ const Footer = () => {
               <li><a href="#services" className="hover:text-teal-400 transition-colors">Hizmetler</a></li>
               <li><a href="#cases" className="hover:text-teal-400 transition-colors">Referanslar</a></li>
               <li><a href="#about" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
+              <li><a href="/is-zekasi-danismanligi" className="hover:text-teal-400 transition-colors">İş Zekâsı Danışmanlığı</a></li>
               <li><a href="#" className="hover:text-teal-400 transition-colors">Kariyer</a></li>
             </ul>
           </div>
@@ -739,6 +740,10 @@ const Footer = () => {
 };
 
 export default function App() {
+  if (window.location.pathname === '/is-zekasi-danismanligi' || window.location.pathname.startsWith('/is-zekasi-danismanligi/')) {
+    return <SMEConsultingPage />;
+  }
+
   if (window.location.pathname === '/restoran' || window.location.pathname.startsWith('/restoran/')) {
     return <RestaurantProduct />;
   }

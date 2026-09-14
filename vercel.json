@@ -22,6 +22,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/is-zekasi-danismanligi", "destination": "/is-zekasi-danismanligi/index.html" },
     { "source": "/restoran", "destination": "/restoran/index.html" },
     { "source": "/suru", "destination": "/suru/index.html" }
   ]

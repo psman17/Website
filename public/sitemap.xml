@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.bianalytic.net/is-zekasi-danismanligi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.bianalytic.net/restoran</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
