@@ -23,6 +23,7 @@
   ],
   "rewrites": [
     { "source": "/is-zekasi-danismanligi", "destination": "/is-zekasi-danismanligi/index.html" },
+    { "source": "/ozel-yapay-zeka", "destination": "/ozel-yapay-zeka/index.html" },
     { "source": "/restoran", "destination": "/restoran/index.html" },
     { "source": "/suru", "destination": "/suru/index.html" }
   ]
