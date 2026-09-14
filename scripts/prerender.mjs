@@ -164,6 +164,33 @@ const routes = [
     },
   },
   {
+    pathname: '/rehber/kobiler-icin-hazir-paneller',
+    output: path.join('rehber', 'kobiler-icin-hazir-paneller', 'index.html'),
+    title: 'KOBİ’ler İçin Hazır Panelli İş Yönetim Araçları',
+    description: 'KOBİ’ler için sektörel ürün, BI platformu ve özel yönetim ekranı seçeneklerini; veri, süreç ve teknik kapasite açısından karşılaştırın.',
+    canonical: 'https://www.bianalytic.net/rehber/kobiler-icin-hazir-paneller',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'Article',
+        headline: 'KOBİ’ler İçin Hazır Panelli İş Yönetim Araçları',
+        description: 'Türkiye’deki KOBİ’ler için hazır panelli operasyon ürünleri, iş zekâsı platformları ve özel yönetim ekranları karar rehberi.',
+        url: 'https://www.bianalytic.net/rehber/kobiler-icin-hazir-paneller',
+        author: {'@id': organization['@id']},
+        publisher: {'@id': organization['@id']},
+        inLanguage: 'tr',
+      }, {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {'@type': 'Question', name: 'Hazır panel hemen kullanılabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Sektörel ürünlerde temel ekranlar hazırdır; işletme bilgileri ve gerekli bağlantılar tanımlandıktan sonra kullanılabilir. Harici sistem verileri eklenecekse entegrasyon çalışması gerekir.'}},
+          {'@type': 'Question', name: 'Mevcut Excel dosyaları bağlanabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Dosyaların düzeni, güncellenme biçimi ve alan tutarlılığı veri keşfinde kontrol edilir. Düzenli yenileme için uygun bağlantı yöntemi bu incelemeden sonra belirlenir.'}},
+          {'@type': 'Question', name: 'Hazır panel sonradan özelleştirilebilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Ürünün desteklediği alanlarda yapılandırma yapılabilir. Yeni süreç, özel entegrasyon veya farklı kullanıcı akışı gerektiğinde ek geliştirme kapsamı çıkarılır.'}},
+          {'@type': 'Question', name: 'Hangi seçeneğin uygun olduğu nasıl anlaşılır?', acceptedAnswer: {'@type': 'Answer', text: 'Karar sorusu, veri kaynakları, kullanıcılar ve mevcut teknik altyapı birlikte değerlendirilir. Bianalytic bu ilk değerlendirmeyi ücretsiz veri keşfi kapsamında yapar.'}},
+        ],
+      }],
+    },
+  },
+  {
     pathname: '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
     output: path.join('karsilastirma', 'is-zekasi-danismanligi-ve-bi-platformu', 'index.html'),
     title: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
