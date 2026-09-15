@@ -719,6 +719,7 @@ const Footer = () => {
               <li><a href="/suru" className="hover:text-teal-400 transition-colors">Bi Sürü</a></li>
               <li><a href="#ozel-yazilim" className="hover:text-teal-400 transition-colors">Özel Yazılım</a></li>
               <li><a href="/hakkimizda" className="hover:text-teal-400 transition-colors">Hakkımızda</a></li>
+              <li><a href="/bianalytic-nedir" className="hover:text-teal-400 transition-colors">Bianalytic Nedir?</a></li>
               <li><a href="/iletisim" className="hover:text-teal-400 transition-colors">İletişim</a></li>
               <li><a href="/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu" className="hover:text-teal-400 transition-colors">Danışmanlık mı, BI Platformu mu?</a></li>
               <li><a href="/rehber/kobiler-icin-hizli-veri-analizi" className="hover:text-teal-400 transition-colors">KOBİ Veri Analizi Rehberi</a></li>

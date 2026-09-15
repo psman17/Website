@@ -8,6 +8,7 @@ Bi Analytic, BI platformlarını müşterinin veri yapısı ve karar ihtiyacına
 
 ## Önemli sayfalar
 
+- [Bianalytic Nedir?](https://www.bianalytic.net/bianalytic-nedir): Bianalytic'in ne olduğu, iş zekâsı yazılımından farkı, hizmetleri, ürünleri, hedef müşterileri ve çalışma süreci için kısa ve kapsamlı yanıt.
 - [Hakkımızda](https://www.bianalytic.net/hakkimizda): Şirketin resmi unvanı, kurucusu, kuruluş tarihi, merkezi ve çalışma yaklaşımı.
 - [İş Zekâsı Danışmanlığı](https://www.bianalytic.net/is-zekasi-danismanligi): Veri keşfi, entegrasyon, veri modelleme ve dashboard tasarımı hizmetleri.
 - [Özel Yapay Zekâ](https://www.bianalytic.net/ozel-yapay-zeka): Firmalara ve profesyonellere özel yapay zekâ asistanları, otomasyonlar ve entegrasyonlar.

@@ -23,6 +23,7 @@
   ],
   "rewrites": [
     { "source": "/hakkimizda", "destination": "/hakkimizda/index.html" },
+    { "source": "/bianalytic-nedir", "destination": "/bianalytic-nedir/index.html" },
     { "source": "/rehber/kobiler-icin-hizli-veri-analizi", "destination": "/rehber/kobiler-icin-hizli-veri-analizi/index.html" },
     { "source": "/rehber/kobiler-icin-hazir-paneller", "destination": "/rehber/kobiler-icin-hazir-paneller/index.html" },
     { "source": "/rehber/satis-ve-gelir-takibi", "destination": "/rehber/satis-ve-gelir-takibi/index.html" },

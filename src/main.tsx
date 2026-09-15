@@ -11,6 +11,7 @@ type PageLoader = () => Promise<PageModule>;
 const routes: Record<string, PageLoader> = {
   '/': () => import('./App'),
   '/hakkimizda': () => import('./AboutPage'),
+  '/bianalytic-nedir': () => import('./CompanyOverviewPage'),
   '/rehber/kobiler-icin-hizli-veri-analizi': () => import('./FastAnalyticsGuidePage'),
   '/rehber/kobiler-icin-hazir-paneller': () => import('./ReadyDashboardGuidePage'),
   '/rehber/satis-ve-gelir-takibi': () => import('./SalesRevenueGuidePage'),

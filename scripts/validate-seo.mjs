@@ -4,6 +4,7 @@ import fs from 'node:fs';
 const expectedRoutes = [
   ['dist/index.html', 'https://www.bianalytic.net/'],
   ['dist/hakkimizda/index.html', 'https://www.bianalytic.net/hakkimizda'],
+  ['dist/bianalytic-nedir/index.html', 'https://www.bianalytic.net/bianalytic-nedir'],
   ['dist/rehber/kobiler-icin-hizli-veri-analizi/index.html', 'https://www.bianalytic.net/rehber/kobiler-icin-hizli-veri-analizi'],
   ['dist/rehber/kobiler-icin-hazir-paneller/index.html', 'https://www.bianalytic.net/rehber/kobiler-icin-hazir-paneller'],
   ['dist/rehber/satis-ve-gelir-takibi/index.html', 'https://www.bianalytic.net/rehber/satis-ve-gelir-takibi'],
@@ -51,6 +52,7 @@ const llms = fs.readFileSync('public/llms.txt', 'utf8');
 assert.match(llms, /^# Bi Analytic/m, 'llms.txt title missing');
 assert.match(llms, /Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi/, 'llms.txt legal identity missing');
 assert.match(llms, /https:\/\/www\.bianalytic\.net\/is-zekasi-danismanligi/, 'llms.txt consulting page missing');
+assert.match(llms, /https:\/\/www\.bianalytic\.net\/bianalytic-nedir/, 'llms.txt company overview page missing');
 assert.match(llms, /https:\/\/www\.bianalytic\.net\/rehber\/48-saatte-is-zekasi-baslangici/, 'llms.txt guide page missing');
 
 const analyticsConsent = fs.readFileSync('public/analytics-consent.js', 'utf8');
@@ -82,6 +84,6 @@ for (const key of [
 ]) {
   assert(securityHeaders.has(key), `vercel.json missing ${key}`);
 }
-assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/hakkimizda', '/rehber/kobiler-icin-hizli-veri-analizi', '/rehber/kobiler-icin-hazir-paneller', '/rehber/satis-ve-gelir-takibi', '/rehber/kobiler-icin-is-zekasi-secimi', '/rehber/48-saatte-is-zekasi-baslangici', '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu', '/iletisim', '/kullanim-kosullari', '/gizlilik-politikasi', '/is-zekasi-danismanligi', '/ozel-yapay-zeka', '/restoran', '/suru']);
+assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/hakkimizda', '/bianalytic-nedir', '/rehber/kobiler-icin-hizli-veri-analizi', '/rehber/kobiler-icin-hazir-paneller', '/rehber/satis-ve-gelir-takibi', '/rehber/kobiler-icin-is-zekasi-secimi', '/rehber/48-saatte-is-zekasi-baslangici', '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu', '/iletisim', '/kullanim-kosullari', '/gizlilik-politikasi', '/is-zekasi-danismanligi', '/ozel-yapay-zeka', '/restoran', '/suru']);
 
 console.log('robots.txt, llms.txt, sitemap.xml, 1200x630 OG image, redirects and security headers valid');

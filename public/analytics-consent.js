@@ -9,6 +9,7 @@
     '/restoran': ['product', 'bi_restoran'],
     '/suru': ['product', 'bi_suru'],
     '/hakkimizda': ['company', 'hakkimizda'],
+    '/bianalytic-nedir': ['company', 'bianalytic_nedir'],
     '/iletisim': ['contact', 'iletisim'],
     '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu': ['comparison', 'is_zekasi_danismanligi_vs_bi_platformu']
   };

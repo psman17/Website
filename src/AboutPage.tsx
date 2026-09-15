@@ -48,6 +48,7 @@ export default function AboutPage() {
               <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-navy-900 sm:text-6xl">Bi Analytic Kimdir?</h1>
               <p className="mt-7 max-w-3xl text-xl leading-8 text-slate-600">Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi, Mayıs 2026’da Çanakkale’de kurulan bir iş zekâsı danışmanlığı ve özel yazılım şirketidir.</p>
               <p className="mt-4 max-w-3xl leading-7 text-slate-600">Şirket; iş zekâsı araçlarını müşterinin veri yapısına göre kullanır, özel yapay zekâ ve yazılım geliştirir, restoran ve hayvancılık operasyonlarına yönelik kendi ürünlerini sunar. Bi Analytic tek bir BI yazılımı değildir.</p>
+              <a href="/bianalytic-nedir" className="mt-6 inline-flex items-center gap-2 font-bold text-teal-700">Bianalytic'in tüm çözüm alanlarını inceleyin <ArrowRight size={16} /></a>
             </div>
             <aside className="rounded-3xl bg-navy-900 p-8 text-white shadow-2xl">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300"><Building2 size={28} /></span>

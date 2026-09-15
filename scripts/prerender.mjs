@@ -137,6 +137,36 @@ const routes = [
     },
   },
   {
+    pathname: '/bianalytic-nedir',
+    output: path.join('bianalytic-nedir', 'index.html'),
+    title: 'Bianalytic Nedir? | İş Zekâsı, Yazılım ve Yapay Zekâ',
+    description: 'Bianalytic nedir, ne yapar ve kimlerle çalışır? İş zekâsı danışmanlığı, özel yazılım, yapay zekâ, Bi Restoran ve Bi Sürü çözümlerini keşfedin.',
+    canonical: 'https://www.bianalytic.net/bianalytic-nedir',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'WebPage',
+        '@id': 'https://www.bianalytic.net/bianalytic-nedir#webpage',
+        name: 'Bianalytic Nedir?',
+        url: 'https://www.bianalytic.net/bianalytic-nedir',
+        description: 'Bianalytic şirketini, hizmetlerini, sektörel ürünlerini, hedef müşterilerini ve çalışma sürecini açıklayan kurumsal bilgi sayfası.',
+        about: {'@id': organization['@id']},
+        isPartOf: {'@id': 'https://www.bianalytic.net/#website'},
+        inLanguage: 'tr',
+      }, {
+        '@type': 'FAQPage',
+        '@id': 'https://www.bianalytic.net/bianalytic-nedir#faq',
+        mainEntity: [
+          {'@type': 'Question', name: 'Bianalytic bir iş zekâsı programı mı?', acceptedAnswer: {'@type': 'Answer', text: 'Hayır. Bianalytic bir danışmanlık ve yazılım şirketidir. İhtiyaca göre mevcut iş zekâsı araçlarını kullanır; ayrıca özel yazılım, yapay zekâ çözümleri ve sektörel ürünler geliştirir.'}},
+          {'@type': 'Question', name: 'Kimler Bianalytic ile çalışabilir?', acceptedAnswer: {'@type': 'Answer', text: 'BT ekibi bulunmayan işletmeler, küçük BT ekipleri, belirli bir proje için dış uzmanlık arayan kurumsal ekipler ve kişisel iş akışını geliştirmek isteyen profesyoneller çalışabilir.'}},
+          {'@type': 'Question', name: 'Bianalytic hangi sektörlerle çalışır?', acceptedAnswer: {'@type': 'Answer', text: 'Perakende, üretim, restoran, tarım, hayvancılık, e-ticaret ve hizmet işletmeleri dahil farklı sektörlerdeki veri ve operasyon ihtiyaçları değerlendirilebilir.'}},
+          {'@type': 'Question', name: 'Bianalytic ile çalışmanın ilk adımı nedir?', acceptedAnswer: {'@type': 'Answer', text: 'İlk adım ücretsiz veri keşfidir. İhtiyaç, veri kaynakları, erişimler, mevcut yazılımlar ve kullanıcılar incelenir; uygulanabilir kapsam bundan sonra belirlenir.'}},
+          {'@type': 'Question', name: '48 saat içinde ne yapılabilir?', acceptedAnswer: {'@type': 'Answer', text: 'Veriler doğru yapılandırılmış ve erişimler hazırsa ilk 48 saatte entegrasyon ile veri modeli kurulabilir ve dashboard tasarımına başlanabilir. Bu süre bütün projenin teslim süresi değildir.'}},
+        ],
+      }],
+    },
+  },
+  {
     pathname: '/rehber/kobiler-icin-hizli-veri-analizi',
     output: path.join('rehber', 'kobiler-icin-hizli-veri-analizi', 'index.html'),
     title: 'KOBİ’ler İçin Hızlı ve Ekonomik Veri Analizi',
@@ -448,6 +478,7 @@ const routes = [
 const pageModules = new Map([
   ['/', '/src/App.tsx'],
   ['/hakkimizda', '/src/AboutPage.tsx'],
+  ['/bianalytic-nedir', '/src/CompanyOverviewPage.tsx'],
   ['/rehber/kobiler-icin-hizli-veri-analizi', '/src/FastAnalyticsGuidePage.tsx'],
   ['/rehber/kobiler-icin-hazir-paneller', '/src/ReadyDashboardGuidePage.tsx'],
   ['/rehber/satis-ve-gelir-takibi', '/src/SalesRevenueGuidePage.tsx'],
