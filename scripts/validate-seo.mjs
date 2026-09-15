@@ -53,6 +53,13 @@ assert.match(llms, /Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi/,
 assert.match(llms, /https:\/\/www\.bianalytic\.net\/is-zekasi-danismanligi/, 'llms.txt consulting page missing');
 assert.match(llms, /https:\/\/www\.bianalytic\.net\/rehber\/48-saatte-is-zekasi-baslangici/, 'llms.txt guide page missing');
 
+const analyticsConsent = fs.readFileSync('public/analytics-consent.js', 'utf8');
+assert.match(analyticsConsent, /G-Z57V7YWLP9/, 'GA4 measurement ID missing');
+assert.match(analyticsConsent, /generate_lead/, 'lead conversion tracking missing');
+assert.match(analyticsConsent, /select_content/, 'content selection tracking missing');
+assert.match(analyticsConsent, /analytics_storage: 'denied'/, 'analytics consent must default to denied');
+assert.match(analyticsConsent, /getPreference\(\) !== 'accept'/, 'events must require analytics consent');
+
 const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
 for (const [, canonical] of expectedRoutes) {
   assert(sitemap.includes(`<loc>${canonical}</loc>`), `sitemap missing ${canonical}`);

@@ -3,13 +3,32 @@
 
   var measurementId = 'G-Z57V7YWLP9';
   var storageKey = 'bianalytic_analytics_consent';
+  var routeContent = {
+    '/is-zekasi-danismanligi': ['service', 'is_zekasi_danismanligi'],
+    '/ozel-yapay-zeka': ['service', 'ozel_yapay_zeka'],
+    '/restoran': ['product', 'bi_restoran'],
+    '/suru': ['product', 'bi_suru'],
+    '/hakkimizda': ['company', 'hakkimizda'],
+    '/iletisim': ['contact', 'iletisim'],
+    '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu': ['comparison', 'is_zekasi_danismanligi_vs_bi_platformu']
+  };
+
+  function prepareGoogleTag() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  }
 
   function loadAnalytics() {
     if (window.__bianalyticAnalyticsLoaded) return;
     window.__bianalyticAnalyticsLoaded = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('consent', 'default', { analytics_storage: 'granted' });
+    prepareGoogleTag();
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+    window.gtag('consent', 'update', { analytics_storage: 'granted' });
     window.gtag('js', new Date());
     window.gtag('config', measurementId, { anonymize_ip: true });
 
@@ -19,12 +38,72 @@
     document.head.appendChild(script);
   }
 
+  function disableAnalyticsStorage() {
+    if (!window.gtag) return;
+    window.gtag('consent', 'update', { analytics_storage: 'denied' });
+  }
+
   function getPreference() {
     try { return window.localStorage.getItem(storageKey); } catch (_) { return null; }
   }
 
   function setPreference(value) {
     try { window.localStorage.setItem(storageKey, value); } catch (_) { /* no-op */ }
+  }
+
+  function track(eventName, parameters) {
+    if (getPreference() !== 'accept') return;
+    loadAnalytics();
+    window.gtag('event', eventName, Object.assign({
+      page_path: window.location.pathname,
+      transport_type: 'beacon'
+    }, parameters));
+  }
+
+  function classifyLink(anchor) {
+    var href = anchor.getAttribute('href') || '';
+    if (/^https?:\/\/(www\.)?wa\.me\//i.test(href)) return ['generate_lead', { contact_method: 'whatsapp' }];
+    if (/^mailto:/i.test(href)) return ['generate_lead', { contact_method: 'email' }];
+    if (/^tel:/i.test(href)) return ['generate_lead', { contact_method: 'phone' }];
+
+    var url;
+    try { url = new URL(anchor.href, window.location.href); } catch (_) { return null; }
+
+    if (url.hostname === 'pos.bianalytic.tr') {
+      return ['select_content', { content_type: 'product_app', item_id: 'bi_restoran' }];
+    }
+    if (url.origin !== window.location.origin) return null;
+
+    var pathname = url.pathname.replace(/\/$/, '') || '/';
+    if (pathname.indexOf('/rehber/') === 0) {
+      return ['select_content', { content_type: 'guide', item_id: pathname.slice('/rehber/'.length) }];
+    }
+    if (!routeContent[pathname]) return null;
+    return ['select_content', { content_type: routeContent[pathname][0], item_id: routeContent[pathname][1] }];
+  }
+
+  function installLinkTracking() {
+    document.addEventListener('click', function (event) {
+      var target = event.target;
+      var anchor = target && target.closest ? target.closest('a[href]') : null;
+      if (!anchor) return;
+      var measurement = classifyLink(anchor);
+      if (measurement) track(measurement[0], measurement[1]);
+    });
+  }
+
+  function createPreferenceControl() {
+    if (document.getElementById('analytics-preference-control')) return;
+    var button = document.createElement('button');
+    button.id = 'analytics-preference-control';
+    button.type = 'button';
+    button.textContent = 'Çerez tercihleri';
+    button.style.cssText = 'position:fixed;z-index:9998;right:12px;bottom:12px;cursor:pointer;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#0f172a;padding:7px 12px;box-shadow:0 5px 18px rgba(15,23,42,.14);font:600 12px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif';
+    button.addEventListener('click', function () {
+      button.remove();
+      createBanner();
+    });
+    document.body.appendChild(button);
   }
 
   function createBanner() {
@@ -49,6 +128,8 @@
       setPreference(choice);
       banner.remove();
       if (choice === 'accept') loadAnalytics();
+      else disableAnalyticsStorage();
+      createPreferenceControl();
     });
 
     document.body.appendChild(banner);
@@ -58,6 +139,8 @@
     var preference = getPreference();
     if (preference === 'accept') loadAnalytics();
     else if (preference !== 'reject') createBanner();
+    if (preference === 'accept' || preference === 'reject') createPreferenceControl();
+    installLinkTracking();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialise);
