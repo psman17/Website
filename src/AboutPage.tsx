@@ -55,7 +55,7 @@ export default function AboutPage() {
               <p className="mt-6 text-sm font-bold uppercase tracking-[.16em] text-teal-300">Şirket bilgileri</p>
               <h2 className="mt-2 font-display text-2xl font-bold">Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi</h2>
               <dl className="mt-7 space-y-4 text-sm text-slate-200">
-                <div className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">Merkez</dt><dd>İstiklal Mah. Şehit Mustafa Kaya Cad. No: 57/11, Çan / Çanakkale</dd></div></div>
+                <div className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">Merkez</dt><dd>Çanakkale</dd></div></div>
                 <div className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">E-posta</dt><dd><a className="hover:text-teal-300" href="mailto:mustafa.oz@bianalytic.net">mustafa.oz@bianalytic.net</a></dd></div></div>
                 <div className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-teal-400" /><div><dt className="font-bold text-white">Telefon</dt><dd><a className="hover:text-teal-300" href="tel:+905437431754">0543 743 1754</a></dd></div></div>
               </dl>

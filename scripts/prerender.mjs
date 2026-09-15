@@ -28,8 +28,7 @@ const organization = {
   founder: {'@id': 'https://www.bianalytic.net/hakkimizda#mustafa-oz'},
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'İstiklal Mah. Şehit Mustafa Kaya Cd. No: 57/11',
-    addressLocality: 'Çan',
+    addressLocality: 'Çanakkale',
     addressRegion: 'Çanakkale',
     addressCountry: 'TR',
   },

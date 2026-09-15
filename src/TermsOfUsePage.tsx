@@ -3,7 +3,7 @@ import React from 'react';
 const sections = [
   {
     title: 'Hizmet sağlayıcı',
-    body: 'Bu site Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi tarafından işletilir. Şirket merkezi İstiklal Mahallesi Şehit Mustafa Kaya Caddesi No: 57/11, Çan / Çanakkale adresindedir. Çan Vergi Dairesi vergi numarası 1691240862, ticaret sicil numarası ÇAN/2295, oda sicil numarası 21842 ve MERSİS numarası 0169124086200001’dir.',
+    body: 'Bu site Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi tarafından işletilir. Şirket merkezi Çanakkale’dedir. Çan Vergi Dairesi vergi numarası 1691240862, ticaret sicil numarası ÇAN/2295, oda sicil numarası 21842 ve MERSİS numarası 0169124086200001’dir.',
   },
   {
     title: 'Kapsam',

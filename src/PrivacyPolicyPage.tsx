@@ -3,7 +3,7 @@ import React from 'react';
 const sections = [
   {
     title: 'Veri sorumlusu',
-    body: 'bianalytic.net kapsamında veri sorumlusu Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi’dir. Şirket merkezi İstiklal Mahallesi Şehit Mustafa Kaya Caddesi No: 57/11, Çan / Çanakkale adresindedir.',
+    body: 'bianalytic.net kapsamında veri sorumlusu Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi’dir. Şirket merkezi Çanakkale’dedir.',
   },
   {
     title: 'Topladığımız bilgiler',

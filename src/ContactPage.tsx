@@ -22,7 +22,7 @@ const contactMethods = [
   },
   {
     title: 'Konum',
-    value: 'İstiklal Mah. Şehit Mustafa Kaya Cad. No: 57/11, Çan / Çanakkale',
+    value: 'Çanakkale',
     icon: MapPin,
   },
 ];
