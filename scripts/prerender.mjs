@@ -218,6 +218,33 @@ const routes = [
     },
   },
   {
+    pathname: '/rehber/kobiler-icin-is-zekasi-secimi',
+    output: path.join('rehber', 'kobiler-icin-is-zekasi-secimi', 'index.html'),
+    title: 'KOBİ İçin İş Zekâsı Çözümü Seçme Rehberi',
+    description: 'KOBİ’niz için hazır ürün, BI platformu, danışmanlık veya özel yazılım seçeneklerini veri, ekip, iş akışı ve toplam maliyet açısından değerlendirin.',
+    canonical: 'https://www.bianalytic.net/rehber/kobiler-icin-is-zekasi-secimi',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'Article',
+        headline: 'KOBİ İçin Doğru İş Zekâsı Çözümü Nasıl Seçilir?',
+        description: 'KOBİ’lerin hazır ürün, BI platformu, danışmanlık ve özel yazılım seçenekleri arasında karar vermesine yardımcı olan seçim rehberi.',
+        url: 'https://www.bianalytic.net/rehber/kobiler-icin-is-zekasi-secimi',
+        author: {'@id': organization['@id']},
+        publisher: {'@id': organization['@id']},
+        inLanguage: 'tr',
+      }, {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {'@type': 'Question', name: 'Mevcut BI lisansı kullanılabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Mevcut lisansın veri bağlantıları, kullanıcı kapsamı ve teknik yeterliliği veri keşfinde değerlendirilir. İhtiyacı karşılıyorsa aynı teknolojiyle devam edilebilir.'}},
+          {'@type': 'Question', name: 'BT ekibi olmadan iş zekâsına başlanabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Kaynaklara gerekli erişim sağlandığında veri bağlantısı, modelleme ve dashboard çalışması danışmanlık kapsamında yürütülebilir. İşletme tarafında karar göstergelerini doğrulayacak kullanıcıların katılımı gerekir.'}},
+          {'@type': 'Question', name: 'İlk projede bütün veriler bağlanmalı mı?', acceptedAnswer: {'@type': 'Answer', text: 'Hayır. Öncelikli karar için gerekli en küçük veri kümesiyle başlanabilir. Model doğrulandıktan sonra yeni kaynaklar ve göstergeler eklenebilir.'}},
+          {'@type': 'Question', name: 'Ücretsiz veri keşfinde ne incelenir?', acceptedAnswer: {'@type': 'Answer', text: 'Kaynakların erişilebilirliği, örnek veri yapısı, mevcut lisanslar, kullanıcılar ve öncelikli raporlama ihtiyacı incelenir. Uygulanabilir proje kapsamı bu bilgilerle belirlenir.'}},
+        ],
+      }],
+    },
+  },
+  {
     pathname: '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
     output: path.join('karsilastirma', 'is-zekasi-danismanligi-ve-bi-platformu', 'index.html'),
     title: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
