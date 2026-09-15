@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
   Database, 
@@ -24,37 +23,6 @@ import {
   Clock,
   LayoutTemplate
 } from 'lucide-react';
-import { 
-  AreaChart, 
-  Area, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  Legend
-} from 'recharts';
-
-// --- Mock Data for Interactive Dashboard ---
-const revenueData = [
-  { name: 'Oca', current: 4000, previous: 2400 },
-  { name: 'Şub', current: 3000, previous: 1398 },
-  { name: 'Mar', current: 2000, previous: 9800 },
-  { name: 'Nis', current: 2780, previous: 3908 },
-  { name: 'May', current: 1890, previous: 4800 },
-  { name: 'Haz', current: 2390, previous: 3800 },
-  { name: 'Tem', current: 3490, previous: 4300 },
-];
-
-const efficiencyData = [
-  { name: 'Pzt', value: 65 },
-  { name: 'Sal', value: 78 },
-  { name: 'Çar', value: 82 },
-  { name: 'Per', value: 70 },
-  { name: 'Cum', value: 89 },
-];
 
 // --- Components ---
 
@@ -107,14 +75,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
-          >
+      {isOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-100 overflow-hidden">
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <a 
@@ -134,9 +96,8 @@ const Navbar = () => {
                 İletişime Geç
               </a>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      )}
     </nav>
   );
 };
@@ -152,12 +113,7 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
+          <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-600/10 text-teal-600 text-sm font-medium mb-6 border border-teal-600/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-500 opacity-75"></span>
@@ -183,15 +139,10 @@ const Hero = () => {
                 İhtiyacınızı Konuşalım
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Hero Visual - Abstract Dashboard */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative lg:ml-auto w-full max-w-lg"
-          >
+          <div className="relative lg:ml-auto w-full max-w-lg">
             <div className="absolute inset-0 bg-gradient-to-tr from-teal-600/20 to-navy-900/20 rounded-3xl transform rotate-3 blur-lg" />
             <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 overflow-hidden">
               <div className="flex items-center justify-between mb-6">
@@ -205,32 +156,22 @@ const Hero = () => {
                 </div>
               </div>
               <div className="h-64 w-full">
-                <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} initialDimension={{width: 512, height: 256}}>
-                  <AreaChart data={revenueData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="colorCurrent" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#1F7A8C" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#1F7A8C" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
-                    <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#888' }} dy={10} />
-                    <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#888' }} />
-                    <Tooltip 
-                      contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                      cursor={{ stroke: '#1F7A8C', strokeWidth: 1, strokeDasharray: '4 4' }}
-                    />
-                    <Area type="monotone" dataKey="current" stroke="#1F7A8C" strokeWidth={3} fillOpacity={1} fill="url(#colorCurrent)" />
-                  </AreaChart>
-                </ResponsiveContainer>
+                <svg viewBox="0 0 512 256" role="img" aria-label="Aylık büyüme eğrisi" className="h-full w-full" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="colorCurrent" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#1F7A8C" stopOpacity="0.3" />
+                      <stop offset="95%" stopColor="#1F7A8C" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  {[42, 92, 142, 192].map((y) => <line key={y} x1="34" x2="500" y1={y} y2={y} stroke="#e5e7eb" strokeDasharray="4 4" />)}
+                  <path d="M34 176 C78 157 92 112 135 128 S196 180 235 151 S290 112 330 132 S390 158 430 116 S475 78 500 62 L500 216 L34 216 Z" fill="url(#colorCurrent)" />
+                  <path d="M34 176 C78 157 92 112 135 128 S196 180 235 151 S290 112 330 132 S390 158 430 116 S475 78 500 62" fill="none" stroke="#1F7A8C" strokeWidth="4" strokeLinecap="round" />
+                  {['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem'].map((month, index) => <text key={month} x={42 + index * 75} y="242" textAnchor="middle" fontSize="12" fill="#64748b">{month}</text>)}
+                </svg>
               </div>
               
               {/* Floating KPI Cards */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-6 top-1/4 bg-white pr-[39px] pb-[14px] pt-[13px] pl-[5px] rounded-xl shadow-xl border border-gray-100 flex items-center gap-4"
-              >
+              <div className="absolute -right-6 top-1/4 bg-white pr-[39px] pb-[14px] pt-[13px] pl-[5px] rounded-xl shadow-xl border border-gray-100 flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-navy-50 flex items-center justify-center">
                   <Activity className="w-5 h-5 text-navy-900" />
                 </div>
@@ -238,9 +179,9 @@ const Hero = () => {
                   <p className="text-xs text-gray-500 font-medium">Verimlilik</p>
                   <p className="font-bold text-navy-900">98.2%</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
@@ -312,20 +253,16 @@ const Solutions = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((solution, index) => (
-            <motion.a
+          {solutions.map((solution) => (
+            <a
               id={solution.id}
               key={solution.title}
               href={solution.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
               className="group rounded-3xl border border-slate-200 bg-white p-7 md:p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl md:last:col-span-2 lg:last:col-span-1"
             >
               <div className="flex items-start gap-5">
                 <div className={`flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border ${solution.accent}`}>
-                  {solution.logo ? <img src={solution.logo} alt={`${solution.title} logosu`} className="h-full w-full object-cover" /> : solution.icon}
+                  {solution.logo ? <img src={solution.logo} alt={`${solution.title} logosu`} width="64" height="64" loading="lazy" decoding="async" className="h-full w-full object-cover" /> : solution.icon}
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[.18em] text-teal-600">{solution.category}</p>
@@ -337,7 +274,7 @@ const Solutions = () => {
               <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-teal-700">
                 {solution.cta}<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>
@@ -378,13 +315,9 @@ const InteractiveDemo = () => {
           </div>
 
           <div className="p-6 md:p-8 min-h-[400px]">
-            <AnimatePresence mode="wait">
               {activeTab === 'before' ? (
-                <motion.div 
+                <div
                   key="before"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
                   className="font-mono text-xs md:text-sm text-gray-300 overflow-x-auto"
                 >
                   <table className="w-full text-left border-collapse">
@@ -414,32 +347,21 @@ const InteractiveDemo = () => {
                   <div className="mt-8 text-center text-gray-500 italic">
                     "Bu verilerden anlamlı bir karar çıkarmak saatler sürer..."
                   </div>
-                </motion.div>
+                </div>
               ) : (
-                <motion.div 
+                <div
                   key="after"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
                   className="grid grid-cols-1 md:grid-cols-3 gap-6"
                 >
                   <div className="md:col-span-2 bg-navy-900 rounded-xl p-4 border border-navy-700">
                     <h4 className="text-sm font-medium text-gray-400 mb-4">Bölgesel Gelir Dağılımı</h4>
-                    <div className="h-64">
-                      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} initialDimension={{width: 720, height: 256}}>
-                        <BarChart data={[
-                          { name: 'NA', value: 4000 },
-                          { name: 'EMEA', value: 3000 },
-                          { name: 'APAC', value: 2000 },
-                          { name: 'LATAM', value: 2780 },
-                        ]}>
-                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#374151" />
-                          <XAxis dataKey="name" stroke="#9CA3AF" tickLine={false} axisLine={false} />
-                          <YAxis stroke="#9CA3AF" tickLine={false} axisLine={false} />
-                          <Tooltip cursor={{fill: '#1F2937'}} contentStyle={{backgroundColor: '#111827', border: 'none', borderRadius: '8px'}} />
-                          <Bar dataKey="value" fill="#1F7A8C" radius={[4, 4, 0, 0]} />
-                        </BarChart>
-                      </ResponsiveContainer>
+                    <div className="flex h-64 items-end justify-around gap-5 border-b border-l border-navy-700 px-5 pt-5" role="img" aria-label="Bölgesel gelir dağılımı: Kuzey Amerika 4000, EMEA 3000, APAC 2000, LATAM 2780">
+                      {[['NA', 88], ['EMEA', 67], ['APAC', 45], ['LATAM', 61]].map(([region, height]) => (
+                        <div key={region} className="flex h-full flex-1 flex-col justify-end gap-2 text-center text-xs text-gray-400">
+                          <div className="mx-auto w-full max-w-20 rounded-t bg-teal-600" style={{height: `${height}%`}} />
+                          <span>{region}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="space-y-6">
@@ -463,9 +385,8 @@ const InteractiveDemo = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
           </div>
         </div>
       </div>
@@ -509,13 +430,9 @@ const Templates = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {templates.map((template, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+          {templates.map((template) => (
+            <div
+              key={template.title}
               className="p-6 rounded-2xl bg-light-bg border border-light-accent hover:shadow-lg hover:border-teal-200 transition-all group"
             >
               <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -525,7 +442,7 @@ const Templates = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {template.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -569,13 +486,9 @@ const Advantages = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {advantages.map((adv, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+          {advantages.map((adv) => (
+            <div
+              key={adv.title}
               className="p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-shadow flex gap-6 items-start"
             >
               <div className="w-14 h-14 shrink-0 rounded-xl bg-teal-50 flex items-center justify-center">
@@ -587,7 +500,7 @@ const Advantages = () => {
                   {adv.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -637,13 +550,9 @@ const CaseStudies = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {cases.map((item, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+          {cases.map((item) => (
+            <div
+              key={item.title}
               className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all"
             >
               <div className="text-sm font-medium text-gray-500 mb-4">{item.company}</div>
@@ -655,7 +564,7 @@ const CaseStudies = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {item.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -732,6 +641,10 @@ const About = () => {
             <img 
               src="https://picsum.photos/seed/analytics-team/800/600" 
               alt="Bi Analytic Team" 
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
               className="relative rounded-2xl shadow-2xl object-cover w-full h-full"
               referrerPolicy="no-referrer"
             />
@@ -781,7 +694,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <div className="inline-flex items-center mb-4 bg-white py-2 px-3 rounded-xl">
-              <img src="/Logo.png" alt="Bi Analytic" className="h-[45px] w-auto object-contain" />
+              <img src="/Logo.png" alt="Bi Analytic" width="150" height="61" loading="lazy" decoding="async" className="h-[45px] w-auto object-contain" />
             </div>
             <p className="text-sm max-w-xs mb-6">
               İş zekâsı danışmanlığı, operasyon ürünleri ve işletmeye özel yazılım geliştirme çözümleri.
