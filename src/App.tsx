@@ -1,18 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import RestaurantProduct from './RestaurantProduct';
-import HerdProduct from './HerdProduct';
-import SMEConsultingPage from './SMEConsultingPage';
-import CustomAIPage from './CustomAIPage';
-import PrivacyPolicyPage from './PrivacyPolicyPage';
-import ContactPage from './ContactPage';
-import TermsOfUsePage from './TermsOfUsePage';
-import ConsultingComparisonPage from './ConsultingComparisonPage';
-import FastAnalyticsGuidePage from './FastAnalyticsGuidePage';
-import ReadyDashboardGuidePage from './ReadyDashboardGuidePage';
-import SalesRevenueGuidePage from './SalesRevenueGuidePage';
-import BISelectionGuidePage from './BISelectionGuidePage';
-import RapidBIStartGuidePage from './RapidBIStartGuidePage';
-import AboutPage from './AboutPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BarChart3, 
@@ -856,62 +842,6 @@ const Footer = () => {
 };
 
 export default function App() {
-  if (window.location.pathname === '/hakkimizda' || window.location.pathname.startsWith('/hakkimizda/')) {
-    return <AboutPage />;
-  }
-
-  if (window.location.pathname === '/rehber/kobiler-icin-hizli-veri-analizi' || window.location.pathname.startsWith('/rehber/kobiler-icin-hizli-veri-analizi/')) {
-    return <FastAnalyticsGuidePage />;
-  }
-
-  if (window.location.pathname === '/rehber/kobiler-icin-hazir-paneller' || window.location.pathname.startsWith('/rehber/kobiler-icin-hazir-paneller/')) {
-    return <ReadyDashboardGuidePage />;
-  }
-
-  if (window.location.pathname === '/rehber/satis-ve-gelir-takibi' || window.location.pathname.startsWith('/rehber/satis-ve-gelir-takibi/')) {
-    return <SalesRevenueGuidePage />;
-  }
-
-  if (window.location.pathname === '/rehber/kobiler-icin-is-zekasi-secimi' || window.location.pathname.startsWith('/rehber/kobiler-icin-is-zekasi-secimi/')) {
-    return <BISelectionGuidePage />;
-  }
-
-  if (window.location.pathname === '/rehber/48-saatte-is-zekasi-baslangici' || window.location.pathname.startsWith('/rehber/48-saatte-is-zekasi-baslangici/')) {
-    return <RapidBIStartGuidePage />;
-  }
-
-  if (window.location.pathname === '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu' || window.location.pathname.startsWith('/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/')) {
-    return <ConsultingComparisonPage />;
-  }
-
-  if (window.location.pathname === '/iletisim' || window.location.pathname.startsWith('/iletisim/')) {
-    return <ContactPage />;
-  }
-
-  if (window.location.pathname === '/kullanim-kosullari' || window.location.pathname.startsWith('/kullanim-kosullari/')) {
-    return <TermsOfUsePage />;
-  }
-
-  if (window.location.pathname === '/gizlilik-politikasi' || window.location.pathname.startsWith('/gizlilik-politikasi/')) {
-    return <PrivacyPolicyPage />;
-  }
-
-  if (window.location.pathname === '/is-zekasi-danismanligi' || window.location.pathname.startsWith('/is-zekasi-danismanligi/')) {
-    return <SMEConsultingPage />;
-  }
-
-  if (window.location.pathname === '/ozel-yapay-zeka' || window.location.pathname.startsWith('/ozel-yapay-zeka/')) {
-    return <CustomAIPage />;
-  }
-
-  if (window.location.pathname === '/restoran' || window.location.pathname.startsWith('/restoran/')) {
-    return <RestaurantProduct />;
-  }
-
-  if (window.location.pathname === '/suru' || window.location.pathname.startsWith('/suru/')) {
-    return <HerdProduct />;
-  }
-
   return (
     <div className="min-h-screen overflow-x-hidden bg-light-bg font-sans selection:bg-teal-500/30">
       <Navbar />
