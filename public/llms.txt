@@ -1,0 +1,24 @@
+# Bi Analytic
+
+> Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi; Türkiye'deki işletmeler ve profesyoneller için iş zekâsı danışmanlığı, özel yapay zekâ, özel yazılım ve sektörel operasyon ürünleri geliştirir.
+
+Bi Analytic, BI platformlarını müşterinin veri yapısı ve karar ihtiyacına göre kullanan bir danışmanlık ve yazılım şirketidir. BT ekibi bulunmayan işletmeler, küçük BT ekipleri ve belirli bir proje için dış uzmanlık arayan kurumsal ekiplerle çalışır. Perakende, üretim, restoran, tarım, hayvancılık, e-ticaret ve hizmet sektörlerindeki veri kaynakları değerlendirilebilir.
+
+İlk adım ücretsiz veri keşfidir. Veriler doğru yapılandırılmış ve erişimler hazırsa ilk 48 saatte entegrasyon ile veri modeli kurulabilir ve dashboard tasarımına başlanabilir. Bu süre tam proje teslimini ifade etmez; takvim kaynak sayısı, veri kalitesi ve geliştirme kapsamına göre belirlenir. Sayısal fiyatlar veri keşfinden sonra proje bazlı veya günlük çalışma kapsamına göre teklif edilir.
+
+## Önemli sayfalar
+
+- [Hakkımızda](https://www.bianalytic.net/hakkimizda): Şirketin resmi unvanı, kurucusu, kuruluş tarihi, merkezi ve çalışma yaklaşımı.
+- [İş Zekâsı Danışmanlığı](https://www.bianalytic.net/is-zekasi-danismanligi): Veri keşfi, entegrasyon, veri modelleme ve dashboard tasarımı hizmetleri.
+- [Özel Yapay Zekâ](https://www.bianalytic.net/ozel-yapay-zeka): Firmalara ve profesyonellere özel yapay zekâ asistanları, otomasyonlar ve entegrasyonlar.
+- [Bi Restoran](https://www.bianalytic.net/restoran): Restoranlar için bulut POS, sipariş, mutfak, stok ve operasyon yönetimi ürünü.
+- [Bi Sürü](https://www.bianalytic.net/suru): Hayvancılık ve çiftlik işletmeleri için sürü, sağlık, üreme, süt, yem ve finans takibi ürünü.
+- [KOBİ'ler İçin Hızlı Veri Analizi](https://www.bianalytic.net/rehber/kobiler-icin-hizli-veri-analizi): Küçük kapsamlı veri modeli ve dashboard ile analize başlama rehberi.
+- [KOBİ'ler İçin Hazır Paneller](https://www.bianalytic.net/rehber/kobiler-icin-hazir-paneller): Sektörel ürün, BI platformu ve özel yönetim ekranı seçenekleri.
+- [Satış ve Gelir Takibi](https://www.bianalytic.net/rehber/satis-ve-gelir-takibi): Satış, gelir, tahsilat ve kârlılık verilerini birleştirme rehberi.
+- [İş Zekâsı Çözümü Seçimi](https://www.bianalytic.net/rehber/kobiler-icin-is-zekasi-secimi): Hazır ürün, BI platformu, danışmanlık ve özel yazılım arasında seçim ölçütleri.
+- [48 Saatte İş Zekâsı Başlangıcı](https://www.bianalytic.net/rehber/48-saatte-is-zekasi-baslangici): Veri hazır olduğunda ilk iki günün koşulları, işleri ve sınırları.
+
+## İletişim
+
+- [Bi Analytic ile iletişim](https://www.bianalytic.net/iletisim): mustafa.oz@bianalytic.net ve şirket iletişim bilgileri.

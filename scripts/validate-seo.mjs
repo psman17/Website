@@ -47,6 +47,12 @@ for (const [file, canonical] of expectedRoutes) {
 const robots = fs.readFileSync('public/robots.txt', 'utf8');
 assert.match(robots, /Sitemap: https:\/\/www\.bianalytic\.net\/sitemap\.xml/);
 
+const llms = fs.readFileSync('public/llms.txt', 'utf8');
+assert.match(llms, /^# Bi Analytic/m, 'llms.txt title missing');
+assert.match(llms, /Bİ Analytic Yazılım Hizmetleri Ticaret Limited Şirketi/, 'llms.txt legal identity missing');
+assert.match(llms, /https:\/\/www\.bianalytic\.net\/is-zekasi-danismanligi/, 'llms.txt consulting page missing');
+assert.match(llms, /https:\/\/www\.bianalytic\.net\/rehber\/48-saatte-is-zekasi-baslangici/, 'llms.txt guide page missing');
+
 const sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');
 for (const [, canonical] of expectedRoutes) {
   assert(sitemap.includes(`<loc>${canonical}</loc>`), `sitemap missing ${canonical}`);
@@ -71,4 +77,4 @@ for (const key of [
 }
 assert.deepEqual(vercel.rewrites.map((rewrite) => rewrite.source), ['/hakkimizda', '/rehber/kobiler-icin-hizli-veri-analizi', '/rehber/kobiler-icin-hazir-paneller', '/rehber/satis-ve-gelir-takibi', '/rehber/kobiler-icin-is-zekasi-secimi', '/rehber/48-saatte-is-zekasi-baslangici', '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu', '/iletisim', '/kullanim-kosullari', '/gizlilik-politikasi', '/is-zekasi-danismanligi', '/ozel-yapay-zeka', '/restoran', '/suru']);
 
-console.log('robots.txt, sitemap.xml, 1200x630 OG image, redirects and security headers valid');
+console.log('robots.txt, llms.txt, sitemap.xml, 1200x630 OG image, redirects and security headers valid');
