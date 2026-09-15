@@ -245,6 +245,33 @@ const routes = [
     },
   },
   {
+    pathname: '/rehber/48-saatte-is-zekasi-baslangici',
+    output: path.join('rehber', '48-saatte-is-zekasi-baslangici', 'index.html'),
+    title: '48 Saatte İş Zekâsı Projesine Başlangıç Rehberi',
+    description: 'Veri hazır olduğunda 48 saat içinde entegrasyon, veri modeli ve dashboard tasarımına başlamak için gereken koşulları ve iki günlük çalışma kapsamını öğrenin.',
+    canonical: 'https://www.bianalytic.net/rehber/48-saatte-is-zekasi-baslangici',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [organization, {
+        '@type': 'Article',
+        headline: '48 Saatte İş Zekâsı Projesine Nasıl Başlanır?',
+        description: 'Veri keşfi, erişim, modelleme ve ilk dashboard tasarımını kapsayan 48 saatlik iş zekâsı başlangıç rehberi.',
+        url: 'https://www.bianalytic.net/rehber/48-saatte-is-zekasi-baslangici',
+        author: {'@id': organization['@id']},
+        publisher: {'@id': organization['@id']},
+        inLanguage: 'tr',
+      }, {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {'@type': 'Question', name: '48 saatte dashboard teslim edilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Veri hazırsa 48 saat içinde entegrasyon ve model kurulabilir, dashboard tasarımına başlanabilir. Tam teslim süresi kaynak, veri kalitesi, kullanıcı ve geliştirme kapsamına göre belirlenir.'}},
+          {'@type': 'Question', name: 'Veri keşfi için hangi bilgiler gerekir?', acceptedAnswer: {'@type': 'Answer', text: 'Kullanılan sistemlerin listesi, örnek veri veya alan bilgisi, erişim yöntemi, raporu kullanacak kişiler ve öncelikli karar sorusu başlangıç için yeterlidir.'}},
+          {'@type': 'Question', name: 'Excel dosyasıyla hızlı başlangıç yapılabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Alanları tutarlı ve örnek kayıtları doğrulanabilir bir dosya ilk model için kullanılabilir. Düzenli kullanımda yenileme ve dosya yönetimi yöntemi ayrıca belirlenir.'}},
+          {'@type': 'Question', name: 'BT ekibi olmayan işletmeler başlayabilir mi?', acceptedAnswer: {'@type': 'Answer', text: 'Evet. Teknik bağlantı, veri modeli ve dashboard kurulumu danışmanlık kapsamında yürütülebilir. İşletme tarafında göstergeleri ve örnek sonuçları doğrulayacak bir sorumlu bulunmalıdır.'}},
+        ],
+      }],
+    },
+  },
+  {
     pathname: '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu',
     output: path.join('karsilastirma', 'is-zekasi-danismanligi-ve-bi-platformu', 'index.html'),
     title: 'İş Zekâsı Danışmanlığı mı, BI Platformu mu?',
