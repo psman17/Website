@@ -11,6 +11,7 @@ import FastAnalyticsGuidePage from './FastAnalyticsGuidePage';
 import ReadyDashboardGuidePage from './ReadyDashboardGuidePage';
 import SalesRevenueGuidePage from './SalesRevenueGuidePage';
 import BISelectionGuidePage from './BISelectionGuidePage';
+import RapidBIStartGuidePage from './RapidBIStartGuidePage';
 import AboutPage from './AboutPage';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -825,6 +826,7 @@ const Footer = () => {
               <li><a href="/rehber/kobiler-icin-hazir-paneller" className="hover:text-teal-400 transition-colors">KOBİ Hazır Panel Rehberi</a></li>
               <li><a href="/rehber/satis-ve-gelir-takibi" className="hover:text-teal-400 transition-colors">Satış ve Gelir Takibi Rehberi</a></li>
               <li><a href="/rehber/kobiler-icin-is-zekasi-secimi" className="hover:text-teal-400 transition-colors">KOBİ İş Zekâsı Seçim Rehberi</a></li>
+              <li><a href="/rehber/48-saatte-is-zekasi-baslangici" className="hover:text-teal-400 transition-colors">48 Saatte İş Zekâsı Başlangıcı</a></li>
             </ul>
           </div>
         </div>
@@ -872,6 +874,10 @@ export default function App() {
 
   if (window.location.pathname === '/rehber/kobiler-icin-is-zekasi-secimi' || window.location.pathname.startsWith('/rehber/kobiler-icin-is-zekasi-secimi/')) {
     return <BISelectionGuidePage />;
+  }
+
+  if (window.location.pathname === '/rehber/48-saatte-is-zekasi-baslangici' || window.location.pathname.startsWith('/rehber/48-saatte-is-zekasi-baslangici/')) {
+    return <RapidBIStartGuidePage />;
   }
 
   if (window.location.pathname === '/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu' || window.location.pathname.startsWith('/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu/')) {
