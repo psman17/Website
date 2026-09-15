@@ -11,7 +11,7 @@ const sections = [
   },
   {
     title: 'Google Analytics ve çerez tercihi',
-    body: 'Google Analytics etiketi yalnızca analitik çerezleri kabul ettiğinizde yüklenir. Kabul sonrasında sayfa görüntülemeleri, ziyaret kaynağı ve sitedeki temel etkileşimler gibi kullanım verileri ölçülür. Reddettiğinizde analitik etiketi yüklenmez.',
+    body: 'Google Analytics etiketi yalnızca analitik çerezleri kabul ettiğinizde yüklenir. Kabul sonrasında sayfa görüntülemeleri, ziyaret kaynağı; WhatsApp, e-posta ve telefon bağlantılarına yapılan tıklamalar ile hizmet, ürün ve rehber geçişleri ölçülür. İletişim adresinin veya mesaj içeriğinin kendisi Analytics’e gönderilmez. Reddettiğinizde analitik etiketi yüklenmez. Ekrandaki “Çerez tercihleri” düğmesiyle kararınızı daha sonra değiştirebilirsiniz.',
   },
   {
     title: 'İşleme amaçları ve saklama',
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
         <p className="mb-3 text-sm font-bold uppercase tracking-[.2em] text-teal-600">Bi Analytic</p>
         <h1 className="font-display text-4xl font-bold text-navy-900 sm:text-5xl">Gizlilik ve Çerez Politikası</h1>
         <p className="mt-6 text-lg leading-8 text-slate-600">
-          Bu sayfa, bianalytic.net üzerindeki kişisel veri ve analitik çerez uygulamalarımızı açıklar. Son güncelleme: 14 Eylül 2026.
+          Bu sayfa, bianalytic.net üzerindeki kişisel veri ve analitik çerez uygulamalarımızı açıklar. Son güncelleme: 15 Eylül 2026.
         </p>
 
         <div className="mt-12 space-y-6">
