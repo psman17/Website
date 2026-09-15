@@ -445,6 +445,24 @@ const routes = [
   },
 ];
 
+const pageModules = new Map([
+  ['/', '/src/App.tsx'],
+  ['/hakkimizda', '/src/AboutPage.tsx'],
+  ['/rehber/kobiler-icin-hizli-veri-analizi', '/src/FastAnalyticsGuidePage.tsx'],
+  ['/rehber/kobiler-icin-hazir-paneller', '/src/ReadyDashboardGuidePage.tsx'],
+  ['/rehber/satis-ve-gelir-takibi', '/src/SalesRevenueGuidePage.tsx'],
+  ['/rehber/kobiler-icin-is-zekasi-secimi', '/src/BISelectionGuidePage.tsx'],
+  ['/rehber/48-saatte-is-zekasi-baslangici', '/src/RapidBIStartGuidePage.tsx'],
+  ['/karsilastirma/is-zekasi-danismanligi-ve-bi-platformu', '/src/ConsultingComparisonPage.tsx'],
+  ['/iletisim', '/src/ContactPage.tsx'],
+  ['/kullanim-kosullari', '/src/TermsOfUsePage.tsx'],
+  ['/gizlilik-politikasi', '/src/PrivacyPolicyPage.tsx'],
+  ['/is-zekasi-danismanligi', '/src/SMEConsultingPage.tsx'],
+  ['/ozel-yapay-zeka', '/src/CustomAIPage.tsx'],
+  ['/restoran', '/src/RestaurantProduct.tsx'],
+  ['/suru', '/src/HerdProduct.tsx'],
+]);
+
 function replaceMeta(html, selector, value) {
   const escapedSelector = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`(<meta ${escapedSelector} content=")[^"]*("\\s*/?>)`, 'i');
@@ -479,14 +497,14 @@ const vite = await createServer({
 });
 
 try {
-  const [{default: App}, template] = await Promise.all([
-    vite.ssrLoadModule('/src/App.tsx'),
-    fs.readFile(path.join(distDir, 'index.html'), 'utf8'),
-  ]);
+  const template = await fs.readFile(path.join(distDir, 'index.html'), 'utf8');
 
   for (const route of routes) {
     globalThis.window.location.pathname = route.pathname;
-    const markup = renderToString(React.createElement(App));
+    const modulePath = pageModules.get(route.pathname);
+    if (!modulePath) throw new Error(`No page module configured for ${route.pathname}`);
+    const {default: Page} = await vite.ssrLoadModule(modulePath);
+    const markup = renderToString(React.createElement(Page));
     const outputPath = path.join(distDir, route.output);
     await fs.mkdir(path.dirname(outputPath), {recursive: true});
     await fs.writeFile(outputPath, buildDocument(template, route, markup), 'utf8');
